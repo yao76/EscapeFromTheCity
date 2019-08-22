@@ -1,0 +1,22 @@
+<resources xmlns:tools="http://schemas.android.com/tools" tools:locale="pl">
+    //STATIC STRINGS
+    <string name="app_name">Escape From The City</string>
+    <string name="Start">Start</string>
+    //SCENARIO 0
+    <string name="Scenario_0">
+        The Night was dark and full of terrors...........
+        \n
+        You woke up in an alley.........
+        \n
+        In a City kind of City...
+        \n
+        Maniacal laughter in the background..
+    </string>
+    //SCENARIO 0
+    //STATIC STRINGS
+    //DYNAMIC STRINGS
+    <string name="Splash">
+            "Welcome" + %s + "!!!"
+    </string>
+    //DYNAMIC STRINGS
+</resources>

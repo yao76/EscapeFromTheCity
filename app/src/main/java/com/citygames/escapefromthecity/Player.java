@@ -7,6 +7,7 @@ public class Player {
     public int Intelligence;
     public int Energy;
     public int Determination;
+    public int Health;
     //PLAYER PROPERTIES
     //CONSTRUCTOR
     public  Player()
@@ -16,6 +17,7 @@ public class Player {
         Intelligence = 15;
         Energy = 100;
         Determination = 20;
+        Health = 100;
     }
 
     public  Player(String name)
@@ -25,8 +27,13 @@ public class Player {
         Intelligence = 15;
         Energy = 100;
         Determination = 20;
+        Health = 100;
     }
     //CONSTRUCTOR
     //PLAYER METHODS
+    public void getsAttacked(Player thisPlayer)
+    {
+        thisPlayer.Health -= 50;
+    }
     //PLAYER METHODS
 }

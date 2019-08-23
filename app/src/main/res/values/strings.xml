@@ -13,21 +13,25 @@
                 \n
                 Maniacal laughter in the background..
             </string>
+            <string name="health">
+               Health: %d
+            </string>
         //SCENARIO 0
     //STATIC STRINGS
     //DYNAMIC STRINGS
         //SCENARIO 0
         //BUTTON NAMES
-            <string name="scenario_option_1">Dynamic Scenario Option 1</string>
-            <string name="scenario_option_2">Dynamic Scenario Option 2</string>
+            <string name="scenario_option_1">%s</string>
+            <string name="scenario_option_2">%s</string>
         //BUTTON NAMES
         //SCENARIO 0
         //OPTION 1
-            <string name="header_1">Option 1 Splash</string>
+            <string name="header_1">Obvious Place</string>
+            <string name="options">%s</string>
             <string name="action_option_1">Dynamic Action Option 1</string>
         //OPTION 1
         //OPTION 2
-            <string name="header_2">Option 2 Splash</string>
+            <string name="header_2">Less Obvious Place</string>
             <string name="action_option_2">Dynamic Action Option 2</string>
         //OPTION 2
         <string name="Splash">

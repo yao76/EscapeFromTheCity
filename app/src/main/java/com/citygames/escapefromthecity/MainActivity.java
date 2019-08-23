@@ -30,9 +30,10 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
             );
-        //START TO PLAYER SPLASH
+        //START TO PLAYER SPLASHhttps://github.com/yao76/EscapeFromTheCity.git
         //Scenario 0 to Next Scenario
 
         //Scenario 0 to Next Scenario
+        String str = Integer.toString((3));
     }
 }

@@ -16,11 +16,20 @@
         //SCENARIO 0
     //STATIC STRINGS
     //DYNAMIC STRINGS
+        //SCENARIO 0
         //BUTTON NAMES
-            <string name="option_1">Dynamic Option 1</string>
-            <string name="option_2">Dynamic Option 2</string>
+            <string name="scenario_option_1">Dynamic Scenario Option 1</string>
+            <string name="scenario_option_2">Dynamic Scenario Option 2</string>
         //BUTTON NAMES
-
+        //SCENARIO 0
+        //OPTION 1
+            <string name="header_1">Option 1 Splash</string>
+            <string name="action_option_1">Dynamic Action Option 1</string>
+        //OPTION 1
+        //OPTION 2
+            <string name="header_2">Option 2 Splash</string>
+            <string name="action_option_2">Dynamic Action Option 2</string>
+        //OPTION 2
         <string name="Splash">
                 "Welcome" + %s + "!!!"
         </string>

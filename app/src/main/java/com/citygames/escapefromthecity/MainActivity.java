@@ -1,15 +1,13 @@
 package com.citygames.escapefromthecity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;//FOR BUTTONS
 import android.widget.TextView;//FOR TEXT VIEW
-import java.util.List;//FOR LISTS//FORLISTS
+import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity
+{
     Button Start,
             Option_1,
             Option_2;
@@ -24,15 +22,20 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         //PLAYER
         final Player livePlayer = new Player();
+        NonPlayer bad_guy = new NonPlayer();
+            bad_guy.Name = "Generic Bad Guy";
+        NonPlayer good_guy = new NonPlayer();
+            good_guy.Name = "Generic Good Guy";
         Armory.MakeItems();
         //PLAYER
+//        btn(Start,R.id.ViewStart, R.string.health);
         //START TO PLAYER SPLASH
         Start = findViewById(R.id.ViewStart);
         Start.setOnClickListener
                 (new View.OnClickListener() {
                      @Override
                      public void onClick(View v) {
-                         setContentView(R.layout.activity_start);
+                         setContentView(R.layout.activity_scenario);
                          //Scenario 0 Actions
                          Option_1 = findViewById(R.id.option_go_1);
                          Option_1.setText(getString(R.string.scenario_option_1, "Obvious Place to look"));
@@ -40,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
                                  (new View.OnClickListener() {
                                       @Override
                                       public void onClick(View v) {
-                                          setContentView(R.layout.option_1);
+                                          setContentView(R.layout.activity_option);
                                           TextView options;
                                           options = findViewById(R.id.viewOption);
                                             String theStuff = "";
@@ -56,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
                                  (new View.OnClickListener() {
                                       @Override
                                       public void onClick(View v) {
-                                          setContentView(R.layout.option_1);
+                                          setContentView(R.layout.activity_option);
                                           TextView options;
                                           options = findViewById(R.id.viewOption);
                                           options.setText(getString(R.string.options,

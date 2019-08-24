@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;//FOR BUTTONS
 import android.widget.TextView;//FOR TEXT VIEW
+import java.util.List;//FOR LISTS//FORLISTS
 
 public class MainActivity extends AppCompatActivity {
     Button Start,
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         //PLAYER
         final Player livePlayer = new Player();
+        Armory.MakeItems();
         //PLAYER
         //START TO PLAYER SPLASH
         Start = findViewById(R.id.ViewStart);
@@ -41,12 +43,10 @@ public class MainActivity extends AppCompatActivity {
                                           setContentView(R.layout.option_1);
                                           TextView options;
                                           options = findViewById(R.id.viewOption);
-                                          options.setText(getString(R.string.options,
-                                                  "Hand Axe\n" +
-                                                          "Ice Pick\n" +
-                                                          "Bag of Ice\n" +
-                                                          "Used Syringe\n" +
-                                                          "Book of Insults"));
+                                            String theStuff = "";
+                                            for(Item item : Armory.allItems ) {theStuff += item.title + "\n";}
+                                            options.setText(getString(R.string.options, theStuff));
+
                                       }
                                   }
                                  );

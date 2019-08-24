@@ -26,7 +26,7 @@
         //BUTTON NAMES
         //SCENARIO 0
         //OPTION 1
-            <string name="header_1">Obvious Place</string>
+            <string name="header_1">You woke, chose Dumpster or Bag</string>
             <string name="options">%s</string>
             <string name="action_option_1">Dynamic Action Option 1</string>
         //OPTION 1

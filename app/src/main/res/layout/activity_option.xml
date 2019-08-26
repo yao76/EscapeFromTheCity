@@ -7,31 +7,19 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/ViewScenario_0"
-        android:layout_width="wrap_content"
+        android:id="@+id/ViewScenario_1"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/Scenario_0"
+        android:text="@string/header_1"
         android:textAlignment="center"
+        android:textColor="#FFFFFF"
         android:textSize="30sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/viewOption"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.001" />
-
-    <ImageView
-        android:id="@+id/Scenario_0_flavor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="TODO"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499"
-        app:srcCompat="@mipmap/ic_launcher_test_foreground" />
 
     <View
         android:id="@+id/divider"
@@ -42,7 +30,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Scenario_0_flavor" />
+        app:layout_constraintTop_toBottomOf="@+id/viewOption" />
 
     <View
         android:id="@+id/vertical"
@@ -56,7 +44,7 @@
         tools:layout_editor_absoluteX="203dp" />
 
     <Button
-        android:id="@+id/option_go_1"
+        android:id="@+id/action_go_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -65,7 +53,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        android:text="@string/option_1"
+        android:text="@string/action_option_1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.445"
@@ -74,7 +62,7 @@
         app:layout_constraintVertical_bias="0.513" />
 
     <Button
-        android:id="@+id/option_go_2"
+        android:id="@+id/action_go_2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -83,12 +71,26 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        android:text="@string/option_2"
+        android:text="@string/action_option_1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/vertical"
         app:layout_constraintHorizontal_bias="0.538"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/divider"
         app:layout_constraintVertical_bias="0.512" />
+
+    <TextView
+        android:id="@+id/viewOption"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="@string/options"
+        android:textAlignment="center"
+        android:textColor="#0F0B0B"
+        android:textSize="50sp"
+        app:layout_constraintBottom_toTopOf="@+id/divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ViewScenario_1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,39 +1,42 @@
 package com.citygames.escapefromthecity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;//FOR BUTTONS
+import android.widget.Spinner;
 import android.widget.TextView;//FOR TEXT VIEW
+import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity
+    implements View.OnClickListener
+{
     Button Start;
-
-    TextView Splash;
-
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //PLAYER
-            final Player thisPlayer = new Player();
-        //PLAYER
-        //START TO PLAYER SPLASH
-            Start = findViewById(R.id.ViewStart);
-            Start.setOnClickListener(new View.OnClickListener()
-                {
-                    @Override
-                    public void onClick(View v)
-                    {
-                        setContentView(R.layout.player_status);
-                    }
-                }
-            );
-        //START TO PLAYER SPLASHhttps://github.com/yao76/EscapeFromTheCity.git
-        //Scenario 0 to Next Scenario
+        Player livePlayer = new Player();
 
-        //Scenario 0 to Next Scenario
-        String str = Integer.toString((3));
+        Armory.MakeItems();
+        //PLAYER
+        Start = findViewById(R.id.ViewStart);
+        Start.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v)
+    {
+            Intent intent = new Intent(this, ScenarioActivity.class);
+            switch (v.getId())
+            {
+                case R.id.ViewStart:
+                    startActivity(intent);
+                    break;
+            }
     }
 }

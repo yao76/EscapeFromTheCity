@@ -13,16 +13,26 @@
                 \n
                 Maniacal laughter in the background..
             </string>
+            <string name="health">
+               Health: %d
+            </string>
         //SCENARIO 0
     //STATIC STRINGS
     //DYNAMIC STRINGS
+        //SCENARIO 0
         //BUTTON NAMES
-            <string name="option_1">Dynamic Option 1</string>
-            <string name="option_2">Dynamic Option 2</string>
+            <string name="scenario_option_1">%s</string>
+            <string name="scenario_option_2">%s</string>
         //BUTTON NAMES
-
-        <string name="Splash">
-                "Welcome" + %s + "!!!"
-        </string>
+        //SCENARIO 0
+        //OPTION 1
+            <string name="header_1">You woke, chose Dumpster or Bag</string>
+            <string name="options">%s</string>
+            <string name="action_option_1">%s</string>
+        //OPTION 1
+        //OPTION 2
+            <string name="weapon_screen">Choose Your Weapon</string>
+            <string name="action_option_2">Dynamic Action Option 2</string>
+        //OPTION 2
     //DYNAMIC STRINGS
 </resources>

@@ -1,5 +1,7 @@
 package com.citygames.escapefromthecity;
 
+import java.util.List;
+
 public abstract class Character {
     //Character PROPERTIES
     public String Name;
@@ -18,6 +20,8 @@ public abstract class Character {
         Energy = 100;
         Determination = 20;
         Health = 100;
+
+        List<Item> inventory;
     }
     //CONSTRUCTOR
 }

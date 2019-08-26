@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/cool_dude_1_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <!-- MAIN ACTIVITY -->
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -16,6 +17,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!-- SCENARIO ACTIVITY -->
+        <activity android:name=".ScenarioActivity"></activity>
+        <!-- OPTION ACTIVITY -->
+        <activity android:name=".OptionActivity"></activity>
+        <!-- SPINNER ACTIVITY -->
+        <activity android:name=".SpinnerActivity"></activity>
     </application>
 
 </manifest>

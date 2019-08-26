@@ -28,19 +28,11 @@
         //OPTION 1
             <string name="header_1">You woke, chose Dumpster or Bag</string>
             <string name="options">%s</string>
-            <string name="action_option_1">Dynamic Action Option 1</string>
+            <string name="action_option_1">%s</string>
         //OPTION 1
         //OPTION 2
-            <string name="header_2">Less Obvious Place</string>
+            <string name="weapon_screen">Choose Your Weapon</string>
             <string name="action_option_2">Dynamic Action Option 2</string>
         //OPTION 2
-        //Weapon Spinner
-            <string-array name="weapons_array">
-                %s
-            </string-array>
-        //Weapon Spinner
-        <string name="Splash">
-                "Welcome" + %s + "!!!"
-        </string>
     //DYNAMIC STRINGS
 </resources>

@@ -9,6 +9,8 @@ public class Item {
     public boolean isStrength;
     public boolean isDetermination;
 
+    public boolean isDumpster;
+
 
     public  Item(String _title, int _damage)
     {

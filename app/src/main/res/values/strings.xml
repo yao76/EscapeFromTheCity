@@ -34,6 +34,11 @@
             <string name="header_2">Less Obvious Place</string>
             <string name="action_option_2">Dynamic Action Option 2</string>
         //OPTION 2
+        //Weapon Spinner
+            <string-array name="weapons_array">
+                %s
+            </string-array>
+        //Weapon Spinner
         <string name="Splash">
                 "Welcome" + %s + "!!!"
         </string>

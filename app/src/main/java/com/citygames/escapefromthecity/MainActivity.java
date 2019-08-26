@@ -2,7 +2,9 @@ package com.citygames.escapefromthecity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;//FOR BUTTONS
+import android.widget.Spinner;
 import android.widget.TextView;//FOR TEXT VIEW
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -38,7 +40,7 @@ public class MainActivity extends AppCompatActivity
                          setContentView(R.layout.activity_scenario);
                          //Scenario 0 Actions
                          Option_1 = findViewById(R.id.option_go_1);
-                         Option_1.setText(getString(R.string.scenario_option_1, "Obvious Place to look"));
+                         Option_1.setText(getString(R.string.scenario_option_1, "Dumpster"));
                          Option_1.setOnClickListener
                                  (new View.OnClickListener() {
                                       @Override
@@ -47,14 +49,17 @@ public class MainActivity extends AppCompatActivity
                                           TextView options;
                                           options = findViewById(R.id.viewOption);
                                             String theStuff = "";
-                                            for(Item item : Armory.allItems ) {theStuff += item.title + "\n";}
-                                            options.setText(getString(R.string.options, theStuff));
+                                            for(Item item : Armory.allItems )
+                                            {if(item.isDumpster == true){
+                                                theStuff += item.title + "\n";}
+                                                options.setText(getString(R.string.options, theStuff));
+                                            }
 
                                       }
                                   }
                                  );
                          Option_2 = findViewById(R.id.option_go_2);
-                         Option_2.setText(getString(R.string.scenario_option_2, "Less Obvious place to look"));
+                         Option_2.setText(getString(R.string.scenario_option_2, "Bag"));
                          Option_2.setOnClickListener
                                  (new View.OnClickListener() {
                                       @Override
@@ -62,11 +67,7 @@ public class MainActivity extends AppCompatActivity
                                           setContentView(R.layout.activity_option);
                                           TextView options;
                                           options = findViewById(R.id.viewOption);
-                                          options.setText(getString(R.string.options,
-                                                  "BlightSaber\n" +
-                                                          "Canon\n" +
-                                                          "Algo Book\n" +
-                                                          "Javascript cake"));
+
                                       }
                                   }
                                  );

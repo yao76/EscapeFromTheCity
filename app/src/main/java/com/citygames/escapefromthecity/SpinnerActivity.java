@@ -21,7 +21,7 @@ public class SpinnerActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_spinner);
-
+        Player livePlayer;
 
         Armory.MakeItems();
         spin_item = findViewById(R.id.item_spinner);

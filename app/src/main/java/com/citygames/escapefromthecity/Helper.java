@@ -1,6 +1,7 @@
 package com.citygames.escapefromthecity;
 //TO AID BUILD OF MAIN
 
+import android.content.SharedPreferences;
 import android.view.View;
 import android.widget.Button;
 
@@ -8,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class Helper extends AppCompatActivity
 {
+    SharedPreferences mPrefs = getPreferences(MODE_PRIVATE);
 
     public void changeContentView(int layout)
     {

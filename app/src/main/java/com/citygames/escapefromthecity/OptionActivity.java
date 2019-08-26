@@ -27,15 +27,26 @@ public class OptionActivity extends AppCompatActivity
     @Override
     public void onClick(View v)
     {
-        Intent intent = new Intent(this, SpinnerActivity.class);
-        switch (v.getId())
+        if("Dumpster Lid" == "Dumpster Lid")
         {
-            case R.id.action_go_1:
-                startActivity(intent);
-                break;
-            case R.id.action_go_2:
-                startActivity(intent);
-                break;
+            Intent intent = new Intent(this, SpinnerActivity.class);
+            switch (v.getId())
+            {
+                case R.id.action_go_1:
+                    startActivity(intent);
+                    break;
+                case R.id.action_go_2:
+                    startActivity(intent);
+                    break;
+            }
+        }else{
+            Intent intent = new Intent(this, SpinnerActivity.class);
+            switch (v.getId())
+            {
+                case R.id.action_go_1:
+                    startActivity(intent);
+                    break;
+            }
         }
     }
 

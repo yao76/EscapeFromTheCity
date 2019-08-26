@@ -29,6 +29,7 @@ public class ScenarioActivity extends AppCompatActivity
     @Override
     public void onClick(View v)
     {
+
         Intent intent = new Intent(this, OptionActivity.class);
         switch (v.getId())
         {

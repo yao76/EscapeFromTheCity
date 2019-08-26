@@ -1,6 +1,7 @@
 package com.citygames.escapefromthecity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -19,17 +20,13 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //PLAYER
-        final Player livePlayer = new Player();
-        NonPlayer bad_guy = new NonPlayer();
-        bad_guy.Name = "Generic Bad Guy";
-        NonPlayer good_guy = new NonPlayer();
-        good_guy.Name = "Generic Good Guy";
+        Player livePlayer = new Player();
+
         Armory.MakeItems();
         //PLAYER
         Start = findViewById(R.id.ViewStart);
         Start.setOnClickListener(this);
     }
-
 
     @Override
     public void onClick(View v)

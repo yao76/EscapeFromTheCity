@@ -1,4 +1,4 @@
-package com.citygames.escapefromthecity;
+package com.citygames.escapefromthecity.item;
 
 public class Item {
     public String title;

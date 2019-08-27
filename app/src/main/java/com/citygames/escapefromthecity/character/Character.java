@@ -1,5 +1,8 @@
-package com.citygames.escapefromthecity;
+package com.citygames.escapefromthecity.character;
 
+import com.citygames.escapefromthecity.item.Item;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Character {
@@ -10,6 +13,8 @@ public abstract class Character {
     public int Energy;
     public int Determination;
     public int Health;
+
+    public List<Item> inventory;
     //Character PROPERTIES
     //CONSTRUCTOR
     public  Character()
@@ -21,7 +26,7 @@ public abstract class Character {
         Determination = 20;
         Health = 100;
 
-        List<Item> inventory;
+        inventory = new ArrayList<Item>();
     }
     //CONSTRUCTOR
 }

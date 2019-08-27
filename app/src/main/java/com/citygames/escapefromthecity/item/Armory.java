@@ -1,8 +1,9 @@
-package com.citygames.escapefromthecity;
+package com.citygames.escapefromthecity.item;
 //COLLECTION OF ITEMS
+
 import java.util.ArrayList;
 
-class Armory
+public class Armory
 {
     public static ArrayList<Item> allItems;
 

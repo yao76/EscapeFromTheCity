@@ -1,14 +1,26 @@
-package com.citygames.escapefromthecity;
+package com.citygames.escapefromthecity.all_activities;
 
-import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+
 import androidx.appcompat.app.AppCompatActivity;
+
+
+//LOCAL FOLDER FILE PATHING
+import com.citygames.escapefromthecity.R;
+import com.citygames.escapefromthecity.character.Player;
+import com.citygames.escapefromthecity.item.Armory;
+import com.citygames.escapefromthecity.item.Item;
+//LOCAL FOLDER FILE PATHING
+import com.google.gson.Gson;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,6 +34,11 @@ public class SpinnerActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_spinner);
 
+        SharedPreferences mPrefs = getSharedPreferences("aString", Context.MODE_PRIVATE);
+        Gson gson = new Gson();
+        String json = mPrefs.getString("livePlayer", "");
+        Player livePlayer = gson.fromJson(json, Player.class);
+        Log.d("Player", livePlayer.Name);
 
         Armory.MakeItems();
         spin_item = findViewById(R.id.item_spinner);
@@ -50,15 +67,32 @@ public class SpinnerActivity extends AppCompatActivity
             switch (v.getId())
             {
                 case R.id.submit_button:
+                    SharedPreferences mPrefs = getSharedPreferences("aString", Context.MODE_PRIVATE);
+                    Gson gson = new Gson();
+                    String json = mPrefs.getString("livePlayer", "");
+                    Player livePlayer = gson.fromJson(json, Player.class);
+                    Log.d("DoDo", livePlayer.Name);
+
                     startActivity(intent);
                     break;
             }
         }else{
 
 
-            Intent intent = new Intent(this, MainActivity.class);
+            Intent intent = new Intent(this, ScenarioActivity.class);
             switch (v.getId()) {
                 case R.id.submit_button:
+                    Player livePlayer = Helper.getPlayer(this);
+                    Log.d("DooDoo", livePlayer.Name);
+                    String thisItem = spin_item.getSelectedItem().toString();
+
+                    Armory.MakeItems();
+                    for (Item toAdd : Armory.allItems) {
+                        if (toAdd.title == thisItem) {
+                            Helper.itemPlayer(this,livePlayer,toAdd);
+                        }
+                    }
+
                     startActivity(intent);
                     break;
             }

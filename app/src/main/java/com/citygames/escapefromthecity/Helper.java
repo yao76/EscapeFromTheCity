@@ -17,28 +17,9 @@ public class Helper extends AppCompatActivity
         setContentView(layout);
     }
 
-    public void btn
-        (
-                //ARGUEMENTS
-                Button locVar,
-                int toView,
-                int setString,
-                final int layout
-        )
-        {
-                //TO DO
-            locVar = findViewById(toView);
-            locVar.setText(getString(setString));
-            locVar.setOnClickListener
-                    (new View.OnClickListener()
-                        {
-                            @Override
-                            public void onClick(View v) {
-                                changeContentView(layout);
-                            }
-                        }
-                    );
-
-        }
-
+    //Todo: Cut down on clutter
+    //Todo: Refactor preferences and get;set; for Player
+    //Todo: Refactor for Layout recycling
+    //Todo: Scenario Class
+    //Todo: make more helper functions
 }

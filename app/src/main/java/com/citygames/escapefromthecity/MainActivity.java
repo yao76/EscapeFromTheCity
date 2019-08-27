@@ -15,6 +15,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.gson.Gson;
 
+//Todo: p0 refactor sharedPreferences
+
 public class MainActivity extends AppCompatActivity
     implements View.OnClickListener
 {

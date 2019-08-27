@@ -35,4 +35,5 @@
             <string name="action_option_2">Dynamic Action Option 2</string>
         //OPTION 2
     //DYNAMIC STRINGS
+    <string name="next_path">option</string>
 </resources>

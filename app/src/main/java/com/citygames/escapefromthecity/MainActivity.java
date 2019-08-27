@@ -27,23 +27,14 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //PLAYER
-        Player livePlayer = new Player();
-        Context context = this;
-        SharedPreferences  mPrefs = context.getSharedPreferences("aString",Context.MODE_PRIVATE);
-        SharedPreferences.Editor prefsEditor = mPrefs.edit();
-        Gson gson = new Gson();
-        String json = gson.toJson(livePlayer);
-        prefsEditor.putString("livePlayer", json);
-        prefsEditor.commit();
-        Log.d("json", json);
-        String test = mPrefs.getString("livePlayer", "");
-        Player craps = gson.fromJson(test, Player.class);
-        Log.d("doDo", craps.Name);
-
-        Armory.MakeItems();
+            Player livePlayer = new Player();
+            Helper.setPlayer(this, livePlayer);
+            Armory.MakeItems();
         //PLAYER
-        Start = findViewById(R.id.ViewStart);
-        Start.setOnClickListener(this);
+        //BUTTON TO LEAVE PAGE
+            Start = findViewById(R.id.ViewStart);
+            Start.setOnClickListener(this);
+        //BUTTON TO LEAVE PAGE
     }
 
     @Override

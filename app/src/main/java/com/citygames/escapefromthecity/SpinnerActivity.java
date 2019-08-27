@@ -76,21 +76,14 @@ public class SpinnerActivity extends AppCompatActivity
             Intent intent = new Intent(this, ScenarioActivity.class);
             switch (v.getId()) {
                 case R.id.submit_button:
-                    SharedPreferences mPrefs = getSharedPreferences("aString", Context.MODE_PRIVATE);
-                    SharedPreferences.Editor prefsEditor = mPrefs.edit();
-                    Gson gson = new Gson();
-                    String json = mPrefs.getString("livePlayer", "");
-                    Player livePlayer = gson.fromJson(json, Player.class);
+                    Player livePlayer = Helper.getPlayer(this);
                     Log.d("DooDoo", livePlayer.Name);
                     String thisItem = spin_item.getSelectedItem().toString();
 
                     Armory.MakeItems();
-                    for (Item item : Armory.allItems) {
-                        if (item.title == thisItem) {
-                            livePlayer.inventory.add(item);
-                            String return_json = gson.toJson(livePlayer);
-                            prefsEditor.putString("livePlayer", return_json);
-                            prefsEditor.commit();
+                    for (Item toAdd : Armory.allItems) {
+                        if (toAdd.title == thisItem) {
+                            Helper.itemPlayer(this,livePlayer,toAdd);
                         }
                     }
 

@@ -19,7 +19,6 @@ public class ScenarioActivity extends AppCompatActivity
 
     Button Option_1,
             Option_2;
-    String hidden_path;
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -31,16 +30,11 @@ public class ScenarioActivity extends AppCompatActivity
         Option_2 = findViewById(R.id.option_go_2);
         Option_2.setText(getString(R.string.scenario_option_2, "Bag"));
         Option_2.setOnClickListener(this);
-        hidden_path = getString(R.string.next_path);
-        SharedPreferences  mPrefs = getSharedPreferences("aString",Context.MODE_PRIVATE);
-        Gson gson = new Gson();
-        String json = mPrefs.getString("livePlayer", "");
-        Player livePlayer = gson.fromJson(json, Player.class);
+        Player livePlayer = Helper.getPlayer(this);
         Log.d("Player", livePlayer.Name);
         if(!livePlayer.inventory.isEmpty())
         {
             Object WTF = livePlayer.inventory.toArray()[0];
-            Log.d("ShonenJump","b");
             Log.d("Weapon", WTF.toString());
         }else{Log.d("WTF","Seriously though");}
     }

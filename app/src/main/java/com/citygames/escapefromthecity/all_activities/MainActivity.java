@@ -1,19 +1,17 @@
-package com.citygames.escapefromthecity;
+package com.citygames.escapefromthecity.all_activities;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.Button;//FOR BUTTONS
-import android.widget.ImageView;
-import android.widget.Spinner;
-import android.widget.TextView;//FOR TEXT VIEW
+import android.widget.Button;
+
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.gson.Gson;
+//LOCAL FOLDER FILE PATHING
+import com.citygames.escapefromthecity.R;
+import com.citygames.escapefromthecity.character.Player;
+import com.citygames.escapefromthecity.item.Armory;
+//LOCAL FOLDER FILE PATHING
 
 //Todo: p0 refactor sharedPreferences
 

@@ -7,7 +7,7 @@
     android:background="@mipmap/dope_background"
     android:id="@+id/hidden_scenario"
     android:contentDescription="@string/next_path"
-    tools:context=".MainActivity">
+    tools:context=".all_activities.MainActivity">
 
     <TextView
         android:id="@+id/ViewScenario_0"

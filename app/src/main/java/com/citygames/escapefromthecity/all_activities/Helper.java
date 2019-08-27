@@ -1,13 +1,13 @@
-package com.citygames.escapefromthecity;
+package com.citygames.escapefromthecity.all_activities;
 //TO CUT DOWN CLUTTER
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.view.View;
-import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.citygames.escapefromthecity.character.Player;
+import com.citygames.escapefromthecity.item.Item;
 import com.google.gson.Gson;
 
 public class Helper extends AppCompatActivity

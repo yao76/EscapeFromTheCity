@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <!-- MAIN ACTIVITY -->
-        <activity android:name=".MainActivity">
+        <activity android:name=".all_activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -18,11 +18,11 @@
             </intent-filter>
         </activity>
         <!-- SCENARIO ACTIVITY -->
-        <activity android:name=".ScenarioActivity"></activity>
+        <activity android:name=".all_activities.ScenarioActivity"></activity>
         <!-- OPTION ACTIVITY -->
-        <activity android:name=".OptionActivity"></activity>
+        <activity android:name=".all_activities.OptionActivity"></activity>
         <!-- SPINNER ACTIVITY -->
-        <activity android:name=".SpinnerActivity"></activity>
+        <activity android:name=".all_activities.SpinnerActivity"></activity>
     </application>
 
 </manifest>

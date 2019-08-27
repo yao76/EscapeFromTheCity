@@ -1,4 +1,4 @@
-package com.citygames.escapefromthecity;
+package com.citygames.escapefromthecity.world;
 
 public class Street
 {

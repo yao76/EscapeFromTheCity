@@ -13,9 +13,6 @@
                 \n
                 Maniacal laughter in the background..
             </string>
-            <string name="health">
-               Health: %d
-            </string>
         //SCENARIO 0
     //STATIC STRINGS
     //DYNAMIC STRINGS
@@ -35,5 +32,4 @@
             <string name="action_option_2">Dynamic Action Option 2</string>
         //OPTION 2
     //DYNAMIC STRINGS
-    <string name="next_path">option</string>
 </resources>

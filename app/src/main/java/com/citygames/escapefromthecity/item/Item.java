@@ -1,6 +1,7 @@
 package com.citygames.escapefromthecity.item;
 
-public class Item {
+public class Item
+{
     public String title;
     public int damage;
 
@@ -19,6 +20,7 @@ public class Item {
         isPoison = false;
         isIntelligent = false;
         isStrength = false;
-        isDetermination = false;    }
+        isDetermination = false;
+    }
 }
 

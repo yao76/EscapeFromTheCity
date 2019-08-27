@@ -34,11 +34,7 @@ public class SpinnerActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_spinner);
 
-        SharedPreferences mPrefs = getSharedPreferences("aString", Context.MODE_PRIVATE);
-        Gson gson = new Gson();
-        String json = mPrefs.getString("livePlayer", "");
-        Player livePlayer = gson.fromJson(json, Player.class);
-        Log.d("Player", livePlayer.Name);
+        Player livePlayer = Helper.getPlayer(this);
 
         Armory.MakeItems();
         spin_item = findViewById(R.id.item_spinner);

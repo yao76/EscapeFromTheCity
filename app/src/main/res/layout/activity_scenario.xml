@@ -6,14 +6,13 @@
     android:layout_height="match_parent"
     android:background="@mipmap/dope_background"
     android:id="@+id/hidden_scenario"
-    android:contentDescription="@string/next_path"
     tools:context=".all_activities.MainActivity">
 
     <TextView
-        android:id="@+id/ViewScenario_0"
+        android:id="@+id/ViewScenario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/Scenario_0"
+        android:text="@string/viewFlavor"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
@@ -28,7 +27,6 @@
         android:id="@+id/Scenario_0_flavor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:contentDescription="@string/next_path"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -87,7 +85,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        android:text="@string/health"
+        android:text="@string/scenario_option_2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/vertical"
         app:layout_constraintHorizontal_bias="0.538"

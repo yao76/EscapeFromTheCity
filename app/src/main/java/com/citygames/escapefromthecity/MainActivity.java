@@ -1,5 +1,6 @@
 package com.citygames.escapefromthecity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -25,7 +26,8 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         //PLAYER
         Player livePlayer = new Player();
-        SharedPreferences  mPrefs = getPreferences(MODE_PRIVATE);
+        Context context = this;
+        SharedPreferences  mPrefs = context.getSharedPreferences("aString",Context.MODE_PRIVATE);
         SharedPreferences.Editor prefsEditor = mPrefs.edit();
         Gson gson = new Gson();
         String json = gson.toJson(livePlayer);

@@ -1,5 +1,6 @@
 package com.citygames.escapefromthecity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -31,11 +32,17 @@ public class ScenarioActivity extends AppCompatActivity
         Option_2.setText(getString(R.string.scenario_option_2, "Bag"));
         Option_2.setOnClickListener(this);
         hidden_path = getString(R.string.next_path);
-        SharedPreferences  mPrefs = getPreferences(MODE_PRIVATE);
+        SharedPreferences  mPrefs = getSharedPreferences("aString",Context.MODE_PRIVATE);
         Gson gson = new Gson();
         String json = mPrefs.getString("livePlayer", "");
         Player livePlayer = gson.fromJson(json, Player.class);
         Log.d("Player", livePlayer.Name);
+        if(!livePlayer.inventory.isEmpty())
+        {
+            Object WTF = livePlayer.inventory.toArray()[0];
+            Log.d("ShonenJump","b");
+            Log.d("Weapon", WTF.toString());
+        }else{Log.d("WTF","Seriously though");}
     }
 
     @Override

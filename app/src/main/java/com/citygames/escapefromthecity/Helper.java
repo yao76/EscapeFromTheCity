@@ -22,4 +22,5 @@ public class Helper extends AppCompatActivity
     //Todo: Refactor for Layout recycling
     //Todo: Scenario Class
     //Todo: make more helper functions
+    //Todo:stuff
 }

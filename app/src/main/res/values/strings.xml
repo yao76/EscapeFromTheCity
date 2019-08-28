@@ -2,6 +2,8 @@
     //STATIC STRINGS
         <string name="app_name">Escape From The City</string>
         <string name="Start">Start</string>
+        <string name="Restart">Restart</string>
+        <string name="Quit">Quit</string>
 
         //SCENARIO 0
             <string name="Scenario_0">
@@ -12,9 +14,6 @@
                 In a City kind of City...
                 \n
                 Maniacal laughter in the background..
-            </string>
-            <string name="health">
-               Health: %d
             </string>
         //SCENARIO 0
     //STATIC STRINGS
@@ -35,5 +34,4 @@
             <string name="action_option_2">Dynamic Action Option 2</string>
         //OPTION 2
     //DYNAMIC STRINGS
-    <string name="next_path">option</string>
 </resources>

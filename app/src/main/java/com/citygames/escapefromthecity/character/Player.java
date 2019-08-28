@@ -2,12 +2,24 @@ package com.citygames.escapefromthecity.character;
 
 //CHILD OF CHARACTER
 
+import com.citygames.escapefromthecity.all_activities.Helper;
+import com.citygames.escapefromthecity.world.Street;
+
+import java.util.Stack;
+
 public class Player extends Character
 {
-    //PLAYER METHODS
-    public void getsAttacked(Player thisPlayer)
+
+    public Stack<Street> playerPath;
+
+    //FOR DEBUGGING
+    public int bug;
+
+    public Player()
     {
-        thisPlayer.Health -= 50;
+        playerPath = new Stack<Street>(){};
+
+        bug = Helper.randomInt(0,30);
+
     }
-    //PLAYER METHODS
 }

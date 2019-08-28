@@ -1,6 +1,9 @@
 package com.citygames.escapefromthecity.item;
 
-public class Item {
+import com.citygames.escapefromthecity.all_activities.Helper;
+
+public class Item
+{
     public String title;
     public int damage;
 
@@ -9,7 +12,11 @@ public class Item {
     public boolean isStrength;
     public boolean isDetermination;
 
+    //FOR STARTING POSITION
     public boolean isDumpster;
+
+    //FOR DEBUGGING
+    public int bug;
 
 
     public  Item(String _title, int _damage)
@@ -19,6 +26,10 @@ public class Item {
         isPoison = false;
         isIntelligent = false;
         isStrength = false;
-        isDetermination = false;    }
+        isDetermination = false;
+        isDumpster = false;
+
+        bug = Helper.randomInt(0,30);
+    }
 }
 

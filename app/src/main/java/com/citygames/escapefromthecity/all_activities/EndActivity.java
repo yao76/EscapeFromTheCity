@@ -1,0 +1,42 @@
+package com.citygames.escapefromthecity.all_activities;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.citygames.escapefromthecity.R;
+
+public class EndActivity extends AppCompatActivity
+        implements View.OnClickListener
+{
+    Button Restart, Quit;
+    @Override
+    public void onCreate(Bundle savedInstanceState)
+    {
+
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_end);
+        Restart = findViewById(R.id.restart);
+        Restart.setOnClickListener(this);
+        Quit = findViewById(R.id.quit);
+        Quit.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v)
+    {
+        Intent intent = new Intent(this, MainActivity.class);
+        switch (v.getId())
+        {
+            case R.id.restart:
+                startActivity(intent);
+                break;
+            case R.id.quit:
+                startActivity(intent);
+                break;
+        }
+    }
+}

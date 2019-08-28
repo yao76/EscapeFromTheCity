@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="viewFlavor">%s</string>
+    <string name="deadCenterFlavor">
+        The Night was dark and full of terrors...........
+        \n
+        You woke up in an alley.........
+        \n
+        In a City kind of City...
+        \n
+        Maniacal laughter in the background..
+    </string>
+</resources>

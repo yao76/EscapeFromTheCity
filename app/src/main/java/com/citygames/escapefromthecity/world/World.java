@@ -53,9 +53,9 @@ public class World
                 allPlaces.add(fifthave);
 
             Street  stigwood = new Street(" Stigwood Avenue");
-                sesame.flavorText = StigwoodFlavor;
-                sesame.button_left = "Fight Bill";
-                sesame.button_right = "Run (Become Cosby's waifu)";
+                stigwood.flavorText = StigwoodFlavor;
+                stigwood.button_left = "Fight Bill";
+                stigwood.button_right = "Run (Become Cosby's waifu)";
                 allPlaces.add(stigwood);
             //NON SPINNERS
             //SPINNERS
@@ -79,13 +79,20 @@ public class World
         allPaths = new ArrayList<Stack<Street>>(){};
         Stack<Street> way_0 = new Stack<Street>(){};
                 deadCenter.branch_left = bag;
-                deadCenter.branch_right = bag;
+                deadCenter.branch_right = dumpster;
 
+                dumpster.branch_left = deadCenter_option;
                 dumpster.branch_right = deadCenter_option;
+
+                bag.branch_left = deadCenter_option;
                 bag.branch_right = deadCenter_option;
 
-                deadCenter_option.branch_right = sesame;
                 deadCenter_option.branch_left = stigwood;
+                deadCenter_option.branch_right = sesame;
+
+                stigwood.branch_right = fifthave;
+
+                sesame.branch_right = fifthave;
 
                 way_0.push(deadCenter);
         allPaths.add(way_0);
@@ -110,8 +117,8 @@ public class World
                 "Select a weapon";
 
         String deadCenter_optionFlavor =
-                "Some Flavor text about" +
-                        "the optional things would probably be useful here";
+                "Wanna go down Sesame Street?" +
+                        "\n or Stigwood Ave?";
 
     String sesameFlavor =
             "A street filled with...." +

@@ -55,14 +55,13 @@ public class ScenarioActivity extends AppCompatActivity
     {
         //GET PLAYER
         Player livePlayer = Helper.getPlayer(this);
-
+        Helper.printStreet(livePlayer.playerPath.peek());
 
         //ROUTE TO END
-        if(livePlayer.playerPath.isEmpty())
+        if(livePlayer.playerPath.peek() == null)
         {
             Intent intent = new Intent(this, EndActivity.class);
-            switch (v.getId())
-            {
+            switch (v.getId()) {
                 case R.id.option_go_1:
                     startActivity(intent);
                     break;
@@ -70,13 +69,10 @@ public class ScenarioActivity extends AppCompatActivity
                     startActivity(intent);
                     break;
             }
-        }
-        //SET PEAK TO VARIABLE FOR NAVIGATION
-        Street toCheck = livePlayer.playerPath.peek();
 
-        //ROUTE TO END
-        //ROUTE TO SPINNER
-        if(toCheck.isSpinner == true)
+            //ROUTE TO END
+            //ROUTE TO SPINNER
+        }else if (livePlayer.playerPath.peek().isSpinner == true)
         {
             Intent intent = new Intent(this, SpinnerActivity.class);
             switch (v.getId())

@@ -28,6 +28,7 @@ public class OptionActivity extends AppCompatActivity
         Player livePlayer = Helper.getPlayer(this);
         //POPS STREET FROM STACK TO GIVE LAYOUT FOR RENDER
         Street toRender = Helper.popStreet(this,livePlayer);
+        Helper.setStreet(this,toRender);
         //PUT PLAYER BACK
         Helper.setPlayer(this,livePlayer);
 
@@ -48,38 +49,38 @@ public class OptionActivity extends AppCompatActivity
     }
 
     @Override
-    public void onClick(View v)
-    {
+    public void onClick(View v) {
         //GET PLAYER
-            Player livePlayer = Helper.getPlayer(this);
+        Player livePlayer = Helper.getPlayer(this);
 
         //ROUTE TO END
-        if(livePlayer.playerPath.isEmpty())
+        if (livePlayer.playerPath.isEmpty())
         {
             Intent intent = new Intent(this, EndActivity.class);
-            switch (v.getId())
-            {
+            switch (v.getId()) {
                 case R.id.action_go_1:
+                    Helper.pushStreet(this,Helper.getPlayer(this),Helper.getStreet(this).branch_left);
                     startActivity(intent);
                     break;
                 case R.id.action_go_2:
+                    Helper.pushStreet(this,Helper.getPlayer(this),Helper.getStreet(this).branch_right);
                     startActivity(intent);
                     break;
             }
-        }
+
         //ROUTE TO END
-        //SET PEAK TO VARIABLE FOR NAVIGATION
-            Street toCheck = livePlayer.playerPath.peek();
         //ROUTE TO SPINNER
-        if(toCheck.isSpinner)
+        }else if(livePlayer.playerPath.peek().isSpinner == true)
         {
             Intent intent = new Intent(this, SpinnerActivity.class);
             switch (v.getId())
             {
                 case R.id.action_go_1:
+                    Helper.pushStreet(this,Helper.getPlayer(this),Helper.getStreet(this).branch_left);
                     startActivity(intent);
                     break;
                 case R.id.action_go_2:
+                    Helper.pushStreet(this,Helper.getPlayer(this),Helper.getStreet(this).branch_right);
                     startActivity(intent);
                     break;
             }
@@ -90,9 +91,11 @@ public class OptionActivity extends AppCompatActivity
             switch (v.getId())
             {
                 case R.id.action_go_1:
+                    Helper.pushStreet(this,Helper.getPlayer(this),Helper.getStreet(this).branch_left);
                     startActivity(intent);
                     break;
                 case R.id.action_go_2:
+                    Helper.pushStreet(this,Helper.getPlayer(this),Helper.getStreet(this).branch_right);
                     startActivity(intent);
                     break;
             }

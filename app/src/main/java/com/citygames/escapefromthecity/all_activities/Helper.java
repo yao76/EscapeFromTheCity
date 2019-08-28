@@ -51,6 +51,25 @@ public abstract class Helper extends AppCompatActivity
 
     //STREET RELATED METHODS
     //STREET RELATED METHODS
+    public static void setStreet(Context context, Street thisStreet)
+    {
+        SharedPreferences  mPrefs = context.getSharedPreferences("aString",Context.MODE_PRIVATE);
+        SharedPreferences.Editor prefsEditor = mPrefs.edit();
+        Gson gson = new Gson();
+        String json = gson.toJson(thisStreet);
+        prefsEditor.putString("thisStreet", json);
+        prefsEditor.commit();
+    }
+    public static Street getStreet(Context context)
+    {
+        SharedPreferences mPrefs = context.getSharedPreferences("aString", Context.MODE_PRIVATE);
+        Gson gson = new Gson();
+        String json = mPrefs.getString("thisStreet", "");
+        Street thisStreet = gson.fromJson(json, Street.class);
+
+        return thisStreet;
+    }
+
     public static Street popStreet(Context context, Player livePlayer)
     {
         SharedPreferences mPrefs = context.getSharedPreferences("aString", Context.MODE_PRIVATE);
@@ -61,8 +80,18 @@ public abstract class Helper extends AppCompatActivity
         String return_json = gson.toJson(livePlayer);
         prefsEditor.putString("livePlayer", return_json);
         prefsEditor.commit();
-        Log.wtf("In Pop", return_json);
+        Log.d("InPop", return_json);
         return toRender;
+    }
+    public static void pushStreet(Context context, Player livePlayer, Street toPush)
+    {
+        SharedPreferences mPrefs = context.getSharedPreferences("aString", Context.MODE_PRIVATE);
+        SharedPreferences.Editor prefsEditor = mPrefs.edit();
+        Gson gson = new Gson();
+        livePlayer.playerPath.push(toPush);
+        String return_json = gson.toJson(livePlayer);
+        prefsEditor.putString("livePlayer", return_json);
+        prefsEditor.commit();
     }
     //STREET RELATED METHODS
     //STREET RELATED METHODS

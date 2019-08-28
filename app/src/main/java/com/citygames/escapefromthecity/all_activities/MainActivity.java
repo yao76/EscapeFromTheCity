@@ -13,7 +13,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.citygames.escapefromthecity.R;
 import com.citygames.escapefromthecity.character.Player;
 import com.citygames.escapefromthecity.item.Armory;
-import com.citygames.escapefromthecity.world.Street;
 import com.citygames.escapefromthecity.world.World;
 //LOCAL FOLDER FILE PATHING
 
@@ -35,8 +34,7 @@ public class MainActivity extends AppCompatActivity
         //WORLD
         //PLAYER
             Player livePlayer = new Player();
-//            livePlayer.playerWorld = thisWorld;
-            livePlayer.playerPath = thisWorld.allEndPaths.get(0);
+            livePlayer.playerPath = thisWorld.allPaths.get(0);
             Helper.setPlayer(this, livePlayer);
             Armory.MakeItems();
         //PLAYER

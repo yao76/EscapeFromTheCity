@@ -2,6 +2,8 @@
     //STATIC STRINGS
         <string name="app_name">Escape From The City</string>
         <string name="Start">Start</string>
+        <string name="Restart">Restart</string>
+        <string name="Quit">Quit</string>
 
         //SCENARIO 0
             <string name="Scenario_0">

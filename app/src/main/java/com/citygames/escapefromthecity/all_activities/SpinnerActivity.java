@@ -19,6 +19,7 @@ import com.citygames.escapefromthecity.character.Player;
 import com.citygames.escapefromthecity.item.Armory;
 import com.citygames.escapefromthecity.item.Item;
 //LOCAL FOLDER FILE PATHING
+import com.citygames.escapefromthecity.world.Street;
 import com.google.gson.Gson;
 
 import java.util.ArrayList;
@@ -34,19 +35,18 @@ public class SpinnerActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_spinner);
 
-        Player livePlayer = Helper.getPlayer(this);
-
-        Armory.MakeItems();
-        spin_item = findViewById(R.id.item_spinner);
-        List<String> list = new ArrayList<String>();
-        for (Item item : Armory.allItems) {
-            list.add(item.title);
-        }
-
-        ArrayAdapter<String> itemAdapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_spinner_item, list);
-        itemAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spin_item.setAdapter(itemAdapter);
+        //SPINNER CONSTRUCTOR FOR ITEMS
+            Armory.MakeItems();
+            spin_item = findViewById(R.id.item_spinner);
+            List<String> list = new ArrayList<String>();
+            for (Item item : Armory.allItems) {
+                list.add(item.title);
+            }
+            ArrayAdapter<String> itemAdapter = new ArrayAdapter<String>(this,
+                    android.R.layout.simple_spinner_item, list);
+            itemAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            spin_item.setAdapter(itemAdapter);
+        //SPINNER CONSTRUCTOR FOR ITEMS
 
         Choose = findViewById(R.id.submit_button);
         Choose.setOnClickListener(this);
@@ -57,42 +57,65 @@ public class SpinnerActivity extends AppCompatActivity
     @Override
     public void onClick(View v)
     {
-        if(spin_item.getSelectedItem() == "Dumpster Lid")
+        //GRAB PLAYER
+        Player livePlayer = Helper.getPlayer(this);
+        //SET PEAK TO VARIABLE FOR NAVIGATION
+        Helper.popStreet(this,livePlayer);
+        Street toCheck = livePlayer.playerPath.peek();
+        Gson _gson = new Gson();
+        String checker = _gson.toJson(toCheck);
+        Boolean is = livePlayer.playerPath.isEmpty();
+        Log.d("Before Spinner", checker);
+        Log.d("Empty", is.toString());
+
+
+        //ROUTE TO END
+        if(livePlayer.playerPath.isEmpty())
+        {
+            Intent intent = new Intent(this, EndActivity.class);
+            switch (v.getId())
+            {
+                case R.id.submit_button:
+                    startActivity(intent);
+                    break;
+            }
+        }
+        //ROUTE TO END
+        //ROUTE TO OPTION
+        if(toCheck.isOption == true)
         {
             Intent intent = new Intent(this, OptionActivity.class);
             switch (v.getId())
             {
                 case R.id.submit_button:
-                    SharedPreferences mPrefs = getSharedPreferences("aString", Context.MODE_PRIVATE);
-                    Gson gson = new Gson();
-                    String json = mPrefs.getString("livePlayer", "");
-                    Player livePlayer = gson.fromJson(json, Player.class);
-                    Log.d("DoDo", livePlayer.Name);
-
                     startActivity(intent);
                     break;
             }
+        //ROUTE TO OPTION
+        //ROUTE TO CATCH
         }else{
 
 
             Intent intent = new Intent(this, ScenarioActivity.class);
             switch (v.getId()) {
                 case R.id.submit_button:
-                    Player livePlayer = Helper.getPlayer(this);
-                    Log.d("DooDoo", livePlayer.Name);
-                    String thisItem = spin_item.getSelectedItem().toString();
-
-                    Armory.MakeItems();
-                    for (Item toAdd : Armory.allItems) {
-                        if (toAdd.title == thisItem) {
-                            Helper.itemPlayer(this,livePlayer,toAdd);
+                    //ITEM SELECTED_title
+                        String thisItem = spin_item.getSelectedItem().toString();
+                    //GRAB ITEM FROM ALL ITEMS_using title
+                        Armory.MakeItems();
+                    for (Item toAdd : Armory.allItems)
+                    {
+                        if (toAdd.title == thisItem)
+                        {
+                            //HELPER TO ADD ITEM TO A PLAYER
+                                Helper.itemPlayer(this,livePlayer,toAdd);
                         }
                     }
-
                     startActivity(intent);
                     break;
             }
         }
+        //ROUTE TO CATCH
 
 
 

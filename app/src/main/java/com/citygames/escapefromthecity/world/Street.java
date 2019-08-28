@@ -2,23 +2,27 @@ package com.citygames.escapefromthecity.world;
 
 public class Street
 {
-    //Street properties
+    //STREET PROPERTIES
     public String name;
     public String flavorText;
-    boolean isDifficult;
-    //Street properties
+    //STREET PROPERTIES
 
-    //Street Navigation properties
+    //FOR BASIC ACTIVITY NAVIGATION
+    public boolean isSpinner;
+    public boolean isOption;
+
+    //STREET NAVIGATION PROPERTIES
     public String button_left;
     public String button_right;
-    //Street Navigation properties
+    //STREET NAVIGATION PROPERTIES
 
     public Street(String ofStreet)
     {
         name = ofStreet;
         flavorText = "";
-        isDifficult = false;
         button_left = "";
         button_right = "";
+        isSpinner = false;
+        isOption = false;
     }
 }

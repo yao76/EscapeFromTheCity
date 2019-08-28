@@ -30,6 +30,7 @@ public class ScenarioActivity extends AppCompatActivity
         Player livePlayer = Helper.getPlayer(this);
         //POPS STREET FROM STACK TO GIVE LAYOUT FOR RENDER
         Street toRender = Helper.popStreet(this,livePlayer);
+
         //PUT PLAYER BACK
         Helper.setPlayer(this,livePlayer);
 
@@ -72,6 +73,7 @@ public class ScenarioActivity extends AppCompatActivity
         }
         //SET PEAK TO VARIABLE FOR NAVIGATION
         Street toCheck = livePlayer.playerPath.peek();
+
         //ROUTE TO END
         //ROUTE TO SPINNER
         if(toCheck.isSpinner == true)

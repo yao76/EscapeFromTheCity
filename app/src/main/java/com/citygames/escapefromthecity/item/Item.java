@@ -27,6 +27,7 @@ public class Item
         isIntelligent = false;
         isStrength = false;
         isDetermination = false;
+        isDumpster = false;
 
         bug = Helper.randomInt(0,30);
     }

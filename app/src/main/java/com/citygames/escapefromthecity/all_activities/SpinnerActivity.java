@@ -34,13 +34,25 @@ public class SpinnerActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_spinner);
-
+            Player livePlayer = Helper.getPlayer(this);
+            Street toCheck = livePlayer.playerPath.peek();
+            Helper.printStreet(toCheck);
         //SPINNER CONSTRUCTOR FOR ITEMS
             Armory.MakeItems();
             spin_item = findViewById(R.id.item_spinner);
             List<String> list = new ArrayList<String>();
-            for (Item item : Armory.allItems) {
-                list.add(item.title);
+            for (Item item : Armory.allItems)
+            {
+                if (toCheck.button_right != null)
+                {
+                    if (item.isDumpster == true){list.add(item.title);}
+                }
+                if (toCheck.button_right == null)
+                {
+                    if (item.isDumpster == false){list.add(item.title);}
+                }else{
+//                    list.add(String.valueOf(item.isDumpster));
+                }
             }
             ArrayAdapter<String> itemAdapter = new ArrayAdapter<String>(this,
                     android.R.layout.simple_spinner_item, list);

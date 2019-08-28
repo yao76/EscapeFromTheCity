@@ -22,13 +22,8 @@ public abstract class Helper extends AppCompatActivity
         SharedPreferences.Editor prefsEditor = mPrefs.edit();
         Gson gson = new Gson();
         String json = gson.toJson(livePlayer);
-        String test = gson.toJson(gson);
         prefsEditor.putString("livePlayer", json);
         prefsEditor.commit();
-        Log.d("butthole0",test);
-        Log.d("butthole",gson.toJson(gson));
-        Log.d("butthole2",json);
-
     }
 
     public static Player getPlayer(Context context)
@@ -62,6 +57,7 @@ public abstract class Helper extends AppCompatActivity
         SharedPreferences.Editor prefsEditor = mPrefs.edit();
         Gson gson = new Gson();
         Street toRender = livePlayer.playerPath.pop();
+        livePlayer.playerPath.push(toRender.branch_right);
         String return_json = gson.toJson(livePlayer);
         prefsEditor.putString("livePlayer", return_json);
         prefsEditor.commit();
@@ -79,11 +75,13 @@ public abstract class Helper extends AppCompatActivity
             return result;
         }
     //RANDOM INTEGER METHOD
-
-    //GET STRING FOR STREET CONSTRUCTION
-
-
-    //GET STRING FOR STREET CONSTRUCTION
+    //PRINT STUFF
+    public static void printStreet(Street toPrint)
+    {
+        Gson gson = new Gson();
+        String return_json = gson.toJson(toPrint);
+        Log.d("printStreet", return_json);
+    }
 
     //Todo: Cut down on clutter
     //Todo: Refactor preferences and get;set; for Player

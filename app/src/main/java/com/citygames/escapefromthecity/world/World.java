@@ -27,14 +27,15 @@ public class World
             //NON SPINNERS
             Street deadCenter = new Street("Dead Centa");
                 deadCenter.flavorText = deadCenterFlavor;
-                deadCenter.button_left = "Bag_tester";
-                deadCenter.button_right = "Dumpster_tester";
+                deadCenter.button_left = "Bag_";
+                deadCenter.button_right = "Dumpster";
                 allPlaces.add(deadCenter);
+                /* SEE SPINNERS FOR NEXT IN LINE */
                 /*DEAD CENTER OPTIONS AFTER ITEM SELECTION*/
-                Street deadCenter_option = new Street("Dead Centa Action");
+                Street deadCenter_option = new Street("Sesame -- Cosby");
                     deadCenter_option.flavorText = deadCenter_optionFlavor;
-                    deadCenter_option.button_left = "";
-                    deadCenter_option.button_right = "Sesame";
+                    deadCenter_option.button_left = "Stigwood Ave";
+                    deadCenter_option.button_right = "Sesame Str";
                     deadCenter_option.isOption = true;
                     allPlaces.add(deadCenter_option);
 
@@ -50,11 +51,25 @@ public class World
                 fifthave.button_left = "Yes";
                 fifthave.button_right = "No";
                 allPlaces.add(fifthave);
+
+            Street  stigwood = new Street(" Stigwood Avenue");
+                sesame.flavorText = StigwoodFlavor;
+                sesame.button_left = "Fight Bill";
+                sesame.button_right = "Run (Become Cosby's waifu)";
+                allPlaces.add(stigwood);
             //NON SPINNERS
             //SPINNERS
-            Street weapon_select = new Street("Weapon Selection");
-                    weapon_select.flavorText = defaultFlavor;
-                    allPlaces.add(weapon_select);
+            Street dumpster = new Street("dumpster");
+                    dumpster.flavorText = deadCenter_selectionFlavor;
+                    dumpster.button_right = "dumpster";
+                    dumpster.isSpinner = true;
+                    allPlaces.add(dumpster);
+
+            Street bag = new Street("bag");
+                bag.flavorText = deadCenter_selectionFlavor;
+                bag.isSpinner = true;
+                allPlaces.add(bag);
+
             Street elmo = new Street("Elmo's Gifts");
                     elmo.flavorText = deadCenterFlavor;
                     elmo.isSpinner = true;
@@ -63,10 +78,15 @@ public class World
 
         allPaths = new ArrayList<Stack<Street>>(){};
         Stack<Street> way_0 = new Stack<Street>(){};
-                way_0.push(fifthave);
-                way_0.push(sesame);
-                way_0.push(deadCenter_option);
-                way_0.push(elmo);
+                deadCenter.branch_left = bag;
+                deadCenter.branch_right = bag;
+
+                dumpster.branch_right = deadCenter_option;
+                bag.branch_right = deadCenter_option;
+
+                deadCenter_option.branch_right = sesame;
+                deadCenter_option.branch_left = stigwood;
+
                 way_0.push(deadCenter);
         allPaths.add(way_0);
     }
@@ -79,16 +99,19 @@ public class World
 
     String deadCenterFlavor =
             "        The Night was dark and full of terrors...........\n" +
-                    "        \\n\n" +
+                    "        \n" +
                     "        You woke up in an alley.........\n" +
-                    "        \\n\n" +
+                    "        \n" +
                     "        In a City kind of City...\n" +
-                    "        \\n\n" +
+                    "        \n" +
                     "        Maniacal laughter in the background..";
 
-    String deadCenter_optionFlavor =
-            "Some Flavor text about" +
-                    "the optional things would probably be useful here";
+        String deadCenter_selectionFlavor =
+                "Select a weapon";
+
+        String deadCenter_optionFlavor =
+                "Some Flavor text about" +
+                        "the optional things would probably be useful here";
 
     String sesameFlavor =
             "A street filled with...." +
@@ -98,6 +121,9 @@ public class World
 
     String fifthaveFlavor =
             "Heavy traffic on the roadway. Do you want to cross?";
+
+    String  StigwoodFlavor =
+            "House of Cosby's team Triosby";
 
     //GIANT LIST OF FLAVOR STRINGS
     //GIANT LIST OF FLAVOR STRINGS

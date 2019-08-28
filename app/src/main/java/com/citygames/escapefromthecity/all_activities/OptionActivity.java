@@ -32,7 +32,7 @@ public class OptionActivity extends AppCompatActivity
         Helper.setPlayer(this,livePlayer);
 
         //AKA FLAVOR TEXT
-            flavor = findViewById(R.id.ViewScenario);
+            flavor = findViewById(R.id.viewOption);
             flavor.setText(getString(R.string.viewFlavor, toRender.flavorText));
         //AKA FLAVOR TEXT
         //AKA BUTTON LEFT
@@ -51,16 +51,7 @@ public class OptionActivity extends AppCompatActivity
     public void onClick(View v)
     {
         //GET PLAYER
-        Player livePlayer = Helper.getPlayer(this);
-        //SET PEAK TO VARIABLE FOR NAVIGATION
-        Street toCheck = livePlayer.playerPath.peek();
-        Gson gson = new Gson();
-        String checker = gson.toJson(toCheck);
-        Log.d("Before Option", checker);
-
-        Boolean is = livePlayer.playerPath.isEmpty();
-
-        Log.d("Empty2", is.toString());
+            Player livePlayer = Helper.getPlayer(this);
 
         //ROUTE TO END
         if(livePlayer.playerPath.isEmpty())
@@ -77,6 +68,8 @@ public class OptionActivity extends AppCompatActivity
             }
         }
         //ROUTE TO END
+        //SET PEAK TO VARIABLE FOR NAVIGATION
+            Street toCheck = livePlayer.playerPath.peek();
         //ROUTE TO SPINNER
         if(toCheck.isSpinner)
         {

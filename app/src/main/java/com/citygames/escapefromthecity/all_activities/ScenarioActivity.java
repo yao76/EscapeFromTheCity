@@ -54,15 +54,7 @@ public class ScenarioActivity extends AppCompatActivity
     {
         //GET PLAYER
         Player livePlayer = Helper.getPlayer(this);
-        //SET PEAK TO VARIABLE FOR NAVIGATION
-        Street toCheck = livePlayer.playerPath.peek();
-        Gson gson = new Gson();
-        String checker = gson.toJson(toCheck);
-        Log.d("Before Scenario", checker);
 
-        Boolean is = livePlayer.playerPath.isEmpty();
-
-        Log.d("Empty1", is.toString());
 
         //ROUTE TO END
         if(livePlayer.playerPath.isEmpty())
@@ -78,6 +70,8 @@ public class ScenarioActivity extends AppCompatActivity
                     break;
             }
         }
+        //SET PEAK TO VARIABLE FOR NAVIGATION
+        Street toCheck = livePlayer.playerPath.peek();
         //ROUTE TO END
         //ROUTE TO SPINNER
         if(toCheck.isSpinner == true)

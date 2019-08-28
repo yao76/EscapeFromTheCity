@@ -83,7 +83,7 @@
         android:id="@+id/viewOption"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:text="@string/options"
+        android:text="@string/viewFlavor"
         android:textAlignment="center"
         android:textColor="#0F0B0B"
         android:textSize="50sp"

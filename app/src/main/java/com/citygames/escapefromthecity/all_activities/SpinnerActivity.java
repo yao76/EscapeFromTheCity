@@ -59,15 +59,7 @@ public class SpinnerActivity extends AppCompatActivity
     {
         //GRAB PLAYER
         Player livePlayer = Helper.getPlayer(this);
-        //SET PEAK TO VARIABLE FOR NAVIGATION
         Helper.popStreet(this,livePlayer);
-        Street toCheck = livePlayer.playerPath.peek();
-        Gson _gson = new Gson();
-        String checker = _gson.toJson(toCheck);
-        Boolean is = livePlayer.playerPath.isEmpty();
-        Log.d("Before Spinner", checker);
-        Log.d("Empty", is.toString());
-
 
         //ROUTE TO END
         if(livePlayer.playerPath.isEmpty())
@@ -81,6 +73,8 @@ public class SpinnerActivity extends AppCompatActivity
             }
         }
         //ROUTE TO END
+        //SET PEAK TO VARIABLE FOR NAVIGATION
+        Street toCheck = livePlayer.playerPath.peek();
         //ROUTE TO OPTION
         if(toCheck.isOption == true)
         {

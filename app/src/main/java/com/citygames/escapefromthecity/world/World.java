@@ -27,7 +27,7 @@ public class World
             //NON SPINNERS
             Street deadCenter = new Street("Dead Centa");
                 deadCenter.flavorText = deadCenterFlavor;
-                deadCenter.button_left = "Bag_";
+                deadCenter.button_left = "DrawString Bag";
                 deadCenter.button_right = "Dumpster";
                 allPlaces.add(deadCenter);
                 /* SEE SPINNERS FOR NEXT IN LINE */
@@ -41,7 +41,7 @@ public class World
 
             Street sesame = new Street("Sesame");
                 sesame.flavorText = sesameFlavor;
-                sesame.button_left = "Fifth Ave";
+                sesame.button_left = "Oscars Dump";
                 sesame.button_right = "Counting Dojo";
                 allPlaces.add(sesame);
 
@@ -54,8 +54,8 @@ public class World
 
             Street  stigwood = new Street(" Stigwood Avenue");
                 stigwood.flavorText = StigwoodFlavor;
-                stigwood.button_left = "Fight Bill";
-                stigwood.button_right = "Run (Become Cosby's waifu)";
+                stigwood.button_left = "Talk with R2B2";
+                stigwood.button_right = "Ignore R2B2";
                 allPlaces.add(stigwood);
             //NON SPINNERS
             //SPINNERS
@@ -67,17 +67,24 @@ public class World
 
             Street bag = new Street("bag");
                 bag.flavorText = deadCenter_selectionFlavor;
+                bag.button_right = null;
                 bag.isSpinner = true;
                 allPlaces.add(bag);
 
             Street counting_dojo = new Street("Counting Dojo");
                 counting_dojo.flavorText = CountingDojoFlavor;
-                counting_dojo.button_left = "Placeholder";
-                counting_dojo.button_right = "Sesame Str";
-//                counting_dojo.isSpinner = true;
+                counting_dojo.button_left = defaultFlavor;
+                counting_dojo.button_right = "Sesame St";
                     allPlaces.add(counting_dojo);
-
             //SPINNERS
+            //FIGHT SCENES
+                Street oscar_dump = new Street("Oscar's Dump");
+                    oscar_dump.flavorText = oscar_dumpFlavor;
+                    oscar_dump.isFight = true;
+                    oscar_dump.button_left = "Attack";
+                    oscar_dump.button_right = "Run";
+                    allPlaces.add(oscar_dump);
+            //FIGHT SCENES
 
         allPaths = new ArrayList<Stack<Street>>(){};
         Stack<Street> way_0 = new Stack<Street>(){};
@@ -96,7 +103,17 @@ public class World
                 stigwood.branch_right = fifthave;
 
                 sesame.branch_right = counting_dojo;
-                sesame.branch_left = fifthave;
+                sesame.button_right = counting_dojo.name;
+                sesame.branch_left = oscar_dump;
+                sesame.button_left = oscar_dump.name;
+
+                counting_dojo.branch_right = fifthave;
+                counting_dojo.branch_left = fifthave;
+
+                fifthave.branch_left = null;
+                fifthave.button_left = "End";
+                fifthave.branch_right = null;
+                fifthave.button_right = "End";
 
 
                 way_0.push(deadCenter);
@@ -107,6 +124,7 @@ public class World
     //GIANT LIST OF FLAVOR STRINGS
     //GIANT LIST OF FLAVOR STRINGS
     //GIANT LIST OF FLAVOR STRINGS
+    String defaultButtonText = "Path.next Name Goes Here";
     String defaultFlavor = "real flavor text would go here";
 
     String deadCenterFlavor =
@@ -135,10 +153,14 @@ public class World
             "Heavy traffic on the roadway. Do you want to cross?";
 
     String  StigwoodFlavor =
-            "House of Cosby's team Triosby";
+            "Cosby 20, R2B2 showed up";
 
     String CountingDojoFlavor =
             "You have kick started your career in counting development by joining our counting bootcamp on Sesame Street. +2 to Intelligence" ;
+
+    String oscar_dumpFlavor =
+           "Upon arrival you ambushed by \n" +
+                   "a sentient dump truck" ;
 
     //GIANT LIST OF FLAVOR STRINGS
     //GIANT LIST OF FLAVOR STRINGS

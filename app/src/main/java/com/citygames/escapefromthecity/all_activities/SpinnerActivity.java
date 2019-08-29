@@ -45,10 +45,12 @@ public class SpinnerActivity extends AppCompatActivity
             {
                 if (toCheck.button_right != null)
                 {
+
                     if (item.isDumpster == true){list.add(item.title);}
                 }
                 if (toCheck.button_right == null)
                 {
+                    Helper.printStreet(toCheck);
                     if (item.isDumpster == false){list.add(item.title);}
                 }else{
 //                    list.add(String.valueOf(item.isDumpster));
@@ -120,9 +122,6 @@ public class SpinnerActivity extends AppCompatActivity
             }
         }
         //ROUTE TO CATCH
-
-
-
     }
 
 }

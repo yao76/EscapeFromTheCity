@@ -10,7 +10,7 @@ public class Street
     //FOR BASIC ACTIVITY NAVIGATION
     public boolean isSpinner;
     public boolean isOption;
-
+    public boolean isFight;
     //STREET NAVIGATION PROPERTIES
     public String button_left;
     public String button_right;
@@ -28,6 +28,7 @@ public class Street
         button_right = "";
         isSpinner = false;
         isOption = false;
+        isFight = false;
         branch_left = null;
         branch_right =null;
     }

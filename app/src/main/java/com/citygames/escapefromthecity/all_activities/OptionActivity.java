@@ -55,6 +55,7 @@ public class OptionActivity extends AppCompatActivity
         //GET PLAYER
         Player livePlayer = Helper.getPlayer(this);
 
+
         //ROUTE TO END
         if (livePlayer.playerPath.isEmpty())
         {
@@ -87,6 +88,22 @@ public class OptionActivity extends AppCompatActivity
                     break;
             }
         //ROUTE TO SPINNER
+            //ROUTE TO FIGHT SCENE
+        }else if(livePlayer.playerPath.peek().isFight == true)
+        {
+            Intent intent = new Intent(this, FightActivity.class);
+            switch (v.getId())
+            {
+                case R.id.action_go_1:
+                    Helper.pushStreet(this, Helper.getPlayer(this), Helper.getStreet(this).branch_left);
+                    startActivity(intent);
+                    break;
+                case R.id.action_go_2:
+                    Helper.pushStreet(this, Helper.getPlayer(this), Helper.getStreet(this).branch_right);
+                    startActivity(intent);
+                    break;
+            }
+            //ROUTE TO FIGHT SCENE
         //CATCH ROUTE
         }else{
             Intent intent = new Intent(this, ScenarioActivity.class);

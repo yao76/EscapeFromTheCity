@@ -67,13 +67,14 @@ public class World
 
             Street bag = new Street("bag");
                 bag.flavorText = deadCenter_selectionFlavor;
+                bag.button_right = null;
                 bag.isSpinner = true;
                 allPlaces.add(bag);
 
             Street counting_dojo = new Street("Counting Dojo");
                 counting_dojo.flavorText = CountingDojoFlavor;
                 counting_dojo.button_left = "Placeholder";
-                counting_dojo.button_right = "Sesame Str";
+                counting_dojo.button_right = "Sesame St";
 //                counting_dojo.isSpinner = true;
                     allPlaces.add(counting_dojo);
 
@@ -97,6 +98,9 @@ public class World
 
                 sesame.branch_right = counting_dojo;
                 sesame.branch_left = fifthave;
+
+                counting_dojo.branch_left = null;
+                counting_dojo.branch_right = null;
 
 
                 way_0.push(deadCenter);

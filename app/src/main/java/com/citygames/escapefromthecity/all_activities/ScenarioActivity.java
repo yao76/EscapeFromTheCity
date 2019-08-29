@@ -57,14 +57,15 @@ public class ScenarioActivity extends AppCompatActivity
     public void onClick(View v)
     {
         //GET PLAYER
-        Player livePlayer = Helper.getPlayer(this);
-        Helper.printStreet(livePlayer.playerPath.peek());
+            Player livePlayer = Helper.getPlayer(this);
+            Helper.printStreet(livePlayer.playerPath.peek());
 
         //ROUTE TO END
         if(livePlayer.playerPath.peek() == null)
         {
             Intent intent = new Intent(this, EndActivity.class);
-            switch (v.getId()) {
+            switch (v.getId())
+            {
                 case R.id.option_go_1:
                     startActivity(intent);
                     break;
@@ -73,8 +74,8 @@ public class ScenarioActivity extends AppCompatActivity
                     break;
             }
 
-            //ROUTE TO END
-            //ROUTE TO SPINNER
+        //ROUTE TO END
+        //ROUTE TO SPINNER
         }else if (livePlayer.playerPath.peek().isSpinner == true)
         {
             Intent intent = new Intent(this, SpinnerActivity.class);

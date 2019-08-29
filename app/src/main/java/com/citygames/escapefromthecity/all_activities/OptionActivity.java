@@ -25,10 +25,12 @@ public class OptionActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_option);
         //GRAB PLAYER
-        Player livePlayer = Helper.getPlayer(this);
+            Player livePlayer = Helper.getPlayer(this);
         //POPS STREET FROM STACK TO GIVE LAYOUT FOR RENDER
-        Street toRender = Helper.popStreet(this,livePlayer);
-        Helper.setStreet(this,toRender);
+            Street toRender = Helper.popStreet(this,livePlayer);
+        //SETS STREET
+            Helper.setStreet(this,toRender);
+        //SETS STREET
         //PUT PLAYER BACK
         Helper.setPlayer(this,livePlayer);
 

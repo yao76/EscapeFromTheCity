@@ -30,6 +30,9 @@ public class ScenarioActivity extends AppCompatActivity
         Player livePlayer = Helper.getPlayer(this);
         //POPS STREET FROM STACK TO GIVE LAYOUT FOR RENDER
         Street toRender = Helper.popStreet(this,livePlayer);
+        //SETS STREET
+            Helper.setStreet(this,toRender);
+        //SETS STREET
 
         //PUT PLAYER BACK
         Helper.setPlayer(this,livePlayer);
@@ -78,9 +81,11 @@ public class ScenarioActivity extends AppCompatActivity
             switch (v.getId())
             {
                 case R.id.option_go_1:
+                    Helper.pushStreet(this,Helper.getPlayer(this),Helper.getStreet(this).branch_left);
                     startActivity(intent);
                     break;
                 case R.id.option_go_2:
+                    Helper.pushStreet(this,Helper.getPlayer(this),Helper.getStreet(this).branch_right);
                     startActivity(intent);
                     break;
             }
@@ -92,9 +97,11 @@ public class ScenarioActivity extends AppCompatActivity
             switch (v.getId())
             {
                 case R.id.option_go_1:
+                    Helper.pushStreet(this,Helper.getPlayer(this),Helper.getStreet(this).branch_left);
                     startActivity(intent);
                     break;
                 case R.id.option_go_2:
+                    Helper.pushStreet(this,Helper.getPlayer(this),Helper.getStreet(this).branch_right);
                     startActivity(intent);
                     break;
             }

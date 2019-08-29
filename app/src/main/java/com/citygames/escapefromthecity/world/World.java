@@ -41,8 +41,8 @@ public class World
 
             Street sesame = new Street("Sesame");
                 sesame.flavorText = sesameFlavor;
-                sesame.button_left = "Big Birds House of Torture";
-                sesame.button_right = "Elmo's Bath House";
+                sesame.button_left = "Fifth Ave";
+                sesame.button_right = "Counting Dojo";
                 allPlaces.add(sesame);
 
 
@@ -70,10 +70,13 @@ public class World
                 bag.isSpinner = true;
                 allPlaces.add(bag);
 
-            Street elmo = new Street("Elmo's Gifts");
-                    elmo.flavorText = deadCenterFlavor;
-                    elmo.isSpinner = true;
-                    allPlaces.add(elmo);
+            Street counting_dojo = new Street("Counting Dojo");
+                counting_dojo.flavorText = CountingDojoFlavor;
+                counting_dojo.button_left = "Placeholder";
+                counting_dojo.button_right = "Sesame Str";
+//                counting_dojo.isSpinner = true;
+                    allPlaces.add(counting_dojo);
+
             //SPINNERS
 
         allPaths = new ArrayList<Stack<Street>>(){};
@@ -92,7 +95,9 @@ public class World
 
                 stigwood.branch_right = fifthave;
 
-                sesame.branch_right = fifthave;
+                sesame.branch_right = counting_dojo;
+                sesame.branch_left = fifthave;
+
 
                 way_0.push(deadCenter);
         allPaths.add(way_0);
@@ -131,6 +136,9 @@ public class World
 
     String  StigwoodFlavor =
             "House of Cosby's team Triosby";
+
+    String CountingDojoFlavor =
+            "You have kick started your career in counting development by joining our counting bootcamp on Sesame Street. +2 to Intelligence" ;
 
     //GIANT LIST OF FLAVOR STRINGS
     //GIANT LIST OF FLAVOR STRINGS

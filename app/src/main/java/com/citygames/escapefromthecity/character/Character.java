@@ -13,6 +13,7 @@ public abstract class Character {
     public int Energy;
     public int Determination;
     public int Health;
+    public int ActionPoints;
 
     public List<Item> inventory;
     //Character PROPERTIES
@@ -25,6 +26,7 @@ public abstract class Character {
         Energy = 100;
         Determination = 20;
         Health = 100;
+        ActionPoints = 100;
 
         inventory = new ArrayList<Item>();
     }

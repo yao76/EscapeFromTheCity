@@ -1,6 +1,7 @@
 package com.citygames.escapefromthecity.all_activities;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.citygames.escapefromthecity.R;
 import com.citygames.escapefromthecity.character.Player;
@@ -26,10 +28,15 @@ public class ScenarioActivity extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scenario);
+        //CHANGE BACKGROUND
+            ConstraintLayout toChange = findViewById(R.id.root_scenario);
+//            toChange.setBackgroundColor(Color.GREEN);
+            toChange.setBackgroundResource(R.drawable.woke_af);
+        //CHANGE BACKGROUND
         //GRAB PLAYER
-        Player livePlayer = Helper.getPlayer(this);
+            Player livePlayer = Helper.getPlayer(this);
         //POPS STREET FROM STACK TO GIVE LAYOUT FOR RENDER
-        Street toRender = Helper.popStreet(this,livePlayer);
+            Street toRender = Helper.popStreet(this,livePlayer);
 
         //PUT PLAYER BACK
         Helper.setPlayer(this,livePlayer);
@@ -63,9 +70,11 @@ public class ScenarioActivity extends AppCompatActivity
             Intent intent = new Intent(this, EndActivity.class);
             switch (v.getId()) {
                 case R.id.option_go_1:
+                    Helper.pushStreet(this,Helper.getPlayer(this),Helper.getStreet(this).branch_left);
                     startActivity(intent);
                     break;
                 case R.id.option_go_2:
+                    Helper.pushStreet(this,Helper.getPlayer(this),Helper.getStreet(this).branch_right);
                     startActivity(intent);
                     break;
             }
@@ -78,9 +87,11 @@ public class ScenarioActivity extends AppCompatActivity
             switch (v.getId())
             {
                 case R.id.option_go_1:
+                    Helper.pushStreet(this,Helper.getPlayer(this),Helper.getStreet(this).branch_left);
                     startActivity(intent);
                     break;
                 case R.id.option_go_2:
+                    Helper.pushStreet(this,Helper.getPlayer(this),Helper.getStreet(this).branch_right);
                     startActivity(intent);
                     break;
             }
@@ -92,9 +103,11 @@ public class ScenarioActivity extends AppCompatActivity
             switch (v.getId())
             {
                 case R.id.option_go_1:
+                    Helper.pushStreet(this,Helper.getPlayer(this),Helper.getStreet(this).branch_left);
                     startActivity(intent);
                     break;
                 case R.id.option_go_2:
+                    Helper.pushStreet(this,Helper.getPlayer(this),Helper.getStreet(this).branch_right);
                     startActivity(intent);
                     break;
             }

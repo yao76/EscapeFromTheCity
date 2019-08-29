@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 
 //LOCAL FOLDER FILE PATHING
@@ -34,6 +35,11 @@ public class SpinnerActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_spinner);
+        //CHANGE BACKGROUND
+            ConstraintLayout toChange = findViewById(R.id.root_spinner);
+            toChange.setBackgroundResource(R.drawable.weapon);
+        //CHANGE BACKGROUND
+        //GRAB PLAYER
             Player livePlayer = Helper.getPlayer(this);
             Street toCheck = livePlayer.playerPath.peek();
 
@@ -47,7 +53,7 @@ public class SpinnerActivity extends AppCompatActivity
                 {
                     if (item.isDumpster == true){list.add(item.title);}
                 }
-                if (toCheck.button_right == null)
+                else if (toCheck.button_right == null)
                 {
                     if (item.isDumpster == false){list.add(item.title);}
                 }else{

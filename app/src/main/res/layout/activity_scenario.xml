@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@mipmap/dope_background"
-    android:id="@+id/root_scenario"
+    android:id="@+id/hidden_scenario"
     tools:context=".all_activities.MainActivity">
 
     <TextView

@@ -20,9 +20,6 @@ public class Street
     public Street branch_right;
     //NEXT POSSIBLE STREET
 
-    //background
-    //background
-
     public Street(String ofStreet)
     {
         name = ofStreet;

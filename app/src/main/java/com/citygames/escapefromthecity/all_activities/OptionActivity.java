@@ -1,6 +1,7 @@
 package com.citygames.escapefromthecity.all_activities;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.citygames.escapefromthecity.R;
 import com.citygames.escapefromthecity.character.Player;
@@ -24,6 +26,10 @@ public class OptionActivity extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_option);
+        //CHANGE BACKGROUND
+        ConstraintLayout toChange = findViewById(R.id.root);
+        toChange.setBackgroundResource(R.drawable.sweet);
+        //CHANGE BACKGROUND
         //GRAB PLAYER
         Player livePlayer = Helper.getPlayer(this);
         //POPS STREET FROM STACK TO GIVE LAYOUT FOR RENDER

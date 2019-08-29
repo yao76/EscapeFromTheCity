@@ -29,4 +29,9 @@ public abstract class Character {
         inventory = new ArrayList<Item>();
     }
     //CONSTRUCTOR
+
+    public void Attack(Character toAttack)
+    {
+        toAttack.Health -= this.Strength;
+    }
 }

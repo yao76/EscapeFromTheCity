@@ -33,6 +33,7 @@ public class ScenarioActivity extends AppCompatActivity
         //PUT PLAYER BACK
         Helper.setPlayer(this,livePlayer);
 
+
         //AKA FLAVOR TEXT
             flavor = findViewById(R.id.ViewScenario);
             flavor.setText(getString(R.string.viewFlavor, toRender.flavorText));
@@ -54,6 +55,7 @@ public class ScenarioActivity extends AppCompatActivity
     {
         //GET PLAYER
             Player livePlayer = Helper.getPlayer(this);
+            Helper.printStreet(livePlayer.playerPath.peek());
 
         //ROUTE TO END
         if(livePlayer.playerPath.peek() == null)
@@ -100,7 +102,7 @@ public class ScenarioActivity extends AppCompatActivity
                     startActivity(intent);
                     break;
             }
-            //ROUTE TO OPTION
+        //ROUTE TO OPTION
         //CATCH ROUTE
         }else{
 

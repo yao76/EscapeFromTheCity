@@ -66,10 +66,10 @@ public class SpinnerActivity extends AppCompatActivity
         //GRAB PLAYER
         Player livePlayer = Helper.getPlayer(this);
         Street next = Helper.popStreet(this, livePlayer);
-
+        Helper.printStreet(livePlayer.playerPath.peek());
 
         //ROUTE TO END
-        if (livePlayer.playerPath.isEmpty())
+        if (livePlayer.playerPath.peek() == null)
         {
             Intent intent = new Intent(this, EndActivity.class);
             switch (v.getId()) {

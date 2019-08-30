@@ -33,7 +33,7 @@ public class World
                     deadCenter_option.flavorText = deadCenter_optionFlavor;
                     deadCenter_option.button_left = "Stigwood Ave";
                     deadCenter_option.button_right = "Sesame Str";
-                    deadCenter_option.isOption = true;
+                    deadCenter_option.isOption = false;
                     allPlaces.add(deadCenter_option);
 
             Street sesame = new Street("Sesame");
@@ -69,6 +69,15 @@ public class World
 
             Street counting_dojo = new Street("Counting Dojo");
                 counting_dojo.flavorText = CountingDojoFlavor;
+
+                Street counting_dojo_attend = new Street("Take Class");
+                    counting_dojo_attend.flavorText = CountingDojoTakeFlavor;
+                    counting_dojo_attend.isOption = true;
+
+                Street counting_dojo_skip = new Street("Skip");
+                    counting_dojo_skip.flavorText = counting_dojo_skipFlavor;
+                    counting_dojo_skip.isOption = true;
+
 
             Street oscars_dump = new Street("Oscar's Dump");
                 oscars_dump.flavorText = dump;
@@ -144,15 +153,15 @@ public class World
                 fifthave.branch_right = fifthave_option_2;
                 fifthave.button_right = fifthave_option_2.name;
 
-                    fifthave_option_1.branch_left = waldo;
-                    fifthave_option_1.button_left = waldo.name;
-                    fifthave_option_1.branch_right = baker;
-                    fifthave_option_1.button_right = baker.name;
+                    fifthave_option_1.branch_left = null;
+                    fifthave_option_1.button_left = "Died on Impact";
+                    fifthave_option_1.branch_right = null;
+                    fifthave_option_1.button_right = "Died on Impact";
 
-                    fifthave_option_1.branch_left = sunny;
-                    fifthave_option_1.button_left = sunny.name;
-                    fifthave_option_1.branch_right = shady;
-                    fifthave_option_1.button_right = shady.name;
+                    fifthave_option_2.branch_left = sunny;
+                    fifthave_option_2.button_left = sunny.name;
+                    fifthave_option_2.branch_right = shady;
+                    fifthave_option_2.button_right = shady.name;
 
                 waldo.branch_left = baker;
                 waldo.button_left = baker.name;
@@ -184,10 +193,20 @@ public class World
                 sesame.button_left = oscars_dump.name;
                 sesame.branch_left = oscars_dump;
 
-                counting_dojo.branch_left = sunny;
-                counting_dojo.button_left = sunny.name;
-                counting_dojo.branch_right = fifthave;
-                counting_dojo.button_right = fifthave.name;
+                counting_dojo.branch_left = counting_dojo_attend;
+                counting_dojo.button_left = counting_dojo_attend.name;
+                counting_dojo.branch_right = counting_dojo_skip;
+                counting_dojo.button_right = counting_dojo_skip.name;
+
+                    counting_dojo_attend.branch_left = sunny;
+                    counting_dojo_attend.button_left = sunny.name;
+                    counting_dojo_attend.branch_right = sunny;
+                    counting_dojo_attend.button_right = sunny.name;
+
+                    counting_dojo_skip.branch_left = sunny;
+                    counting_dojo_skip.button_left = fifthave.name;
+                    counting_dojo_skip.branch_right = sunny;
+                    counting_dojo_skip.button_right = sunny.name;
 
                 oscars_dump.branch_left = sunny;
                 oscars_dump.button_left = sunny.name;
@@ -212,7 +231,7 @@ public class World
     String fifthave_option_1Flavor =
             "You got hit by an angry grandma \n" +
                     "on a rascal \n" +
-                    "How embarrassing";
+                    "Died on Impact";
 
     String fifthave_option_2Flavor =
             "An angry grandma on a rascal \n" +
@@ -286,7 +305,16 @@ public class World
                         "BLEEEEP!!!!!\n";
 
     String CountingDojoFlavor =
-            "You have kick started your career in counting development by joining our counting bootcamp on Sesame Street. +2 to Intelligence" ;
+            "Kick start your career in counting development" +
+                    " by joining our counting bootcamp on Sesame Street!";
+
+        String CountingDojoTakeFlavor =
+                "You have kick started your career in counting development " +
+                        "" +
+                        " +2 to Intelligence" ;
+
+        String counting_dojo_skipFlavor =
+                "NotBryanna found you outside and forced you take the ITC class. + 10 to Intelligence.";
 
     //GIANT LIST OF FLAVOR STRINGS
     //GIANT LIST OF FLAVOR STRINGS

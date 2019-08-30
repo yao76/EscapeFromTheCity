@@ -1,6 +1,10 @@
 package com.citygames.escapefromthecity.all_activities;
 
 import android.content.Intent;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
+import android.media.SoundPool;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,6 +18,8 @@ import com.citygames.escapefromthecity.R;
 import com.citygames.escapefromthecity.character.Player;
 import com.citygames.escapefromthecity.item.Armory;
 import com.citygames.escapefromthecity.world.World;
+
+import java.io.IOException;
 //LOCAL FOLDER FILE PATHING
 
 //Todo: p0 refactor sharedPreferences
@@ -38,6 +44,14 @@ public class MainActivity extends AppCompatActivity
             Helper.setPlayer(this, livePlayer);
             Armory.MakeItems();
         //PLAYER
+
+        // WHAT THE FUCK WHY IS THIS NOT WORKING ANYMORE
+
+
+
+
+
+
         //BUTTON TO LEAVE PAGE
             Start = findViewById(R.id.ViewStart);
             Start.setOnClickListener(this);

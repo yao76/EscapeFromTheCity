@@ -6,16 +6,25 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_test_round"
+        android:roundIcon="@mipmap/cool_dude_1_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <!-- MAIN ACTIVITY -->
+        <activity android:name=".all_activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!-- SCENARIO ACTIVITY -->
+        <activity android:name=".all_activities.ScenarioActivity"></activity>
+        <!-- OPTION ACTIVITY -->
+        <activity android:name=".all_activities.OptionActivity"></activity>
+        <!-- SPINNER ACTIVITY -->
+        <activity android:name=".all_activities.SpinnerActivity"></activity>
+        <!--End ACTIVITY-->
+        <activity android:name=".all_activities.EndActivity"></activity>
     </application>
 
 </manifest>

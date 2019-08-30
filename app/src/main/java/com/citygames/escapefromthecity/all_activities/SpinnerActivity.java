@@ -69,7 +69,7 @@ public class SpinnerActivity extends AppCompatActivity
 
 
         //ROUTE TO END
-        if (livePlayer.playerPath.isEmpty())
+        if (livePlayer.playerPath.peek() == null)
         {
             Intent intent = new Intent(this, EndActivity.class);
             switch (v.getId()) {

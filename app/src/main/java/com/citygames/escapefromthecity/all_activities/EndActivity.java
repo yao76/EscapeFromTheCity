@@ -24,7 +24,7 @@ public class EndActivity extends AppCompatActivity
         Restart.setOnClickListener(this);
         Quit = findViewById(R.id.quit);
         Quit.setOnClickListener(this);
-        MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.r2b2beep);
+        MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.r2b2beep2);
         mp.start();
     }
 

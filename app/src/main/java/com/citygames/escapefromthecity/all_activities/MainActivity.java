@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.media.SoundPool;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -17,6 +18,8 @@ import com.citygames.escapefromthecity.R;
 import com.citygames.escapefromthecity.character.Player;
 import com.citygames.escapefromthecity.item.Armory;
 import com.citygames.escapefromthecity.world.World;
+
+import java.io.IOException;
 //LOCAL FOLDER FILE PATHING
 
 //Todo: p0 refactor sharedPreferences
@@ -43,8 +46,10 @@ public class MainActivity extends AppCompatActivity
         //PLAYER
 
         // WHAT THE FUCK WHY IS THIS NOT WORKING ANYMORE
-        // MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.r2b2beep);
-        // mp.start();
+
+
+
+
 
 
         //BUTTON TO LEAVE PAGE

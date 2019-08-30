@@ -9,7 +9,6 @@
         android:roundIcon="@mipmap/cool_dude_1_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".all_activities.FightActivity"></activity>
         <!-- MAIN ACTIVITY -->
         <activity android:name=".all_activities.MainActivity">
             <intent-filter>
@@ -17,11 +16,15 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- SCENARIO ACTIVITY -->
-        <activity android:name=".all_activities.ScenarioActivity" /> <!-- OPTION ACTIVITY -->
-        <activity android:name=".all_activities.OptionActivity" /> <!-- SPINNER ACTIVITY -->
-        <activity android:name=".all_activities.SpinnerActivity" /> <!-- End ACTIVITY -->
-        <activity android:name=".all_activities.EndActivity" />
+        </activity>
+        <!-- SCENARIO ACTIVITY -->
+        <activity android:name=".all_activities.ScenarioActivity"></activity>
+        <!-- OPTION ACTIVITY -->
+        <activity android:name=".all_activities.OptionActivity"></activity>
+        <!-- SPINNER ACTIVITY -->
+        <activity android:name=".all_activities.SpinnerActivity"></activity>
+        <!--End ACTIVITY-->
+        <activity android:name=".all_activities.EndActivity"></activity>
     </application>
 
 </manifest>

@@ -7,7 +7,6 @@ import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.citygames.escapefromthecity.character.NonPlayer;
 import com.citygames.escapefromthecity.character.Player;
 import com.citygames.escapefromthecity.item.Item;
 import com.citygames.escapefromthecity.world.Street;
@@ -33,7 +32,6 @@ public abstract class Helper extends AppCompatActivity
         Gson gson = new Gson();
         String json = mPrefs.getString("livePlayer", "");
         Player livePlayer = gson.fromJson(json, Player.class);
-
         return livePlayer;
     }
 
@@ -61,13 +59,13 @@ public abstract class Helper extends AppCompatActivity
         prefsEditor.putString("thisStreet", json);
         prefsEditor.commit();
     }
+
     public static Street getStreet(Context context)
     {
         SharedPreferences mPrefs = context.getSharedPreferences("aString", Context.MODE_PRIVATE);
         Gson gson = new Gson();
         String json = mPrefs.getString("thisStreet", "");
         Street thisStreet = gson.fromJson(json, Street.class);
-
         return thisStreet;
     }
 
@@ -81,9 +79,9 @@ public abstract class Helper extends AppCompatActivity
         String return_json = gson.toJson(livePlayer);
         prefsEditor.putString("livePlayer", return_json);
         prefsEditor.commit();
-        Log.d("InPop", return_json);
         return toRender;
     }
+
     public static void pushStreet(Context context, Player livePlayer, Street toPush)
     {
         SharedPreferences mPrefs = context.getSharedPreferences("aString", Context.MODE_PRIVATE);
@@ -96,31 +94,7 @@ public abstract class Helper extends AppCompatActivity
     }
     //STREET RELATED METHODS
     //STREET RELATED METHODS
-    //NON PLAYER METHODS
-    //NON PLAYER METHODS
 
-    public static void setEnemy(Context context, NonPlayer enemy)
-    {
-        SharedPreferences  mPrefs = context.getSharedPreferences("aString",Context.MODE_PRIVATE);
-        SharedPreferences.Editor prefsEditor = mPrefs.edit();
-        Gson gson = new Gson();
-        String json = gson.toJson(enemy);
-        prefsEditor.putString("enemy", json);
-        prefsEditor.commit();
-    }
-
-    public static NonPlayer getEnemy(Context context)
-    {
-        SharedPreferences mPrefs = context.getSharedPreferences("aString", Context.MODE_PRIVATE);
-        Gson gson = new Gson();
-        String json = mPrefs.getString("enemy", "");
-        NonPlayer enemy = gson.fromJson(json, NonPlayer.class);
-
-        return enemy;
-    }
-
-    //NON PLAYER METHODS
-    //NON PLAYER METHODS
     //RANDOM INTEGER METHOD
         public  static int randomInt(int low, int high)
         {
@@ -129,6 +103,7 @@ public abstract class Helper extends AppCompatActivity
             return result;
         }
     //RANDOM INTEGER METHOD
+
     //PRINT STUFF
     public static void printStreet(Street toPrint)
     {
@@ -136,11 +111,4 @@ public abstract class Helper extends AppCompatActivity
         String return_json = gson.toJson(toPrint);
         Log.d("printStreet", return_json);
     }
-
-    //Todo: Cut down on clutter
-    //Todo: Refactor preferences and get;set; for Player
-    //Todo: Refactor for Layout recycling
-    //Todo: Scenario Class
-    //Todo: make more helper functions
-    //Todo:stuff
 }

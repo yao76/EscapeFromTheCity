@@ -32,8 +32,6 @@ public class EndActivity extends AppCompatActivity
         switch (v.getId())
         {
             case R.id.restart:
-                startActivity(intent);
-                break;
             case R.id.quit:
                 startActivity(intent);
                 break;

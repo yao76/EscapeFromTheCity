@@ -1,17 +1,13 @@
 package com.citygames.escapefromthecity.all_activities;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 
 //LOCAL FOLDER FILE PATHING
 import com.citygames.escapefromthecity.R;
@@ -20,7 +16,6 @@ import com.citygames.escapefromthecity.item.Armory;
 import com.citygames.escapefromthecity.item.Item;
 //LOCAL FOLDER FILE PATHING
 import com.citygames.escapefromthecity.world.Street;
-import com.google.gson.Gson;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,15 +40,13 @@ public class SpinnerActivity extends AppCompatActivity
             {
                 if (toCheck.button_right != null)
                 {
-
                     if (item.isDumpster == true){list.add(item.title);}
                 }
                 if (toCheck.button_right == null)
                 {
-                    Helper.printStreet(toCheck);
                     if (item.isDumpster == false){list.add(item.title);}
                 }else{
-//                    list.add(String.valueOf(item.isDumpster));
+
                 }
             }
             ArrayAdapter<String> itemAdapter = new ArrayAdapter<String>(this,
@@ -122,6 +115,9 @@ public class SpinnerActivity extends AppCompatActivity
             }
         }
         //ROUTE TO CATCH
+
+
+
     }
 
 }

@@ -32,7 +32,6 @@ public abstract class Helper extends AppCompatActivity
         Gson gson = new Gson();
         String json = mPrefs.getString("livePlayer", "");
         Player livePlayer = gson.fromJson(json, Player.class);
-
         return livePlayer;
     }
 
@@ -60,13 +59,13 @@ public abstract class Helper extends AppCompatActivity
         prefsEditor.putString("thisStreet", json);
         prefsEditor.commit();
     }
+
     public static Street getStreet(Context context)
     {
         SharedPreferences mPrefs = context.getSharedPreferences("aString", Context.MODE_PRIVATE);
         Gson gson = new Gson();
         String json = mPrefs.getString("thisStreet", "");
         Street thisStreet = gson.fromJson(json, Street.class);
-
         return thisStreet;
     }
 
@@ -76,13 +75,13 @@ public abstract class Helper extends AppCompatActivity
         SharedPreferences.Editor prefsEditor = mPrefs.edit();
         Gson gson = new Gson();
         Street toRender = livePlayer.playerPath.pop();
-        livePlayer.playerPath.push(toRender.branch_right);
+        livePlayer.playerPath.push(toRender.branch_left);
         String return_json = gson.toJson(livePlayer);
         prefsEditor.putString("livePlayer", return_json);
         prefsEditor.commit();
-        Log.d("InPop", return_json);
         return toRender;
     }
+
     public static void pushStreet(Context context, Player livePlayer, Street toPush)
     {
         SharedPreferences mPrefs = context.getSharedPreferences("aString", Context.MODE_PRIVATE);
@@ -104,6 +103,7 @@ public abstract class Helper extends AppCompatActivity
             return result;
         }
     //RANDOM INTEGER METHOD
+
     //PRINT STUFF
     public static void printStreet(Street toPrint)
     {
@@ -111,11 +111,4 @@ public abstract class Helper extends AppCompatActivity
         String return_json = gson.toJson(toPrint);
         Log.d("printStreet", return_json);
     }
-
-    //Todo: Cut down on clutter
-    //Todo: Refactor preferences and get;set; for Player
-    //Todo: Refactor for Layout recycling
-    //Todo: Scenario Class
-    //Todo: make more helper functions
-    //Todo:stuff
 }

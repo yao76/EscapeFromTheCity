@@ -2,7 +2,6 @@ package com.citygames.escapefromthecity.all_activities;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -12,14 +11,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.citygames.escapefromthecity.R;
 import com.citygames.escapefromthecity.character.Player;
 import com.citygames.escapefromthecity.world.Street;
-import com.google.gson.Gson;
 
 public class ScenarioActivity extends AppCompatActivity
         implements View.OnClickListener
 {
-
-    Button Option_1,
-            Option_2;
+    Button Option_1,Option_2;
     TextView flavor;
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -58,7 +54,6 @@ public class ScenarioActivity extends AppCompatActivity
     {
         //GET PLAYER
             Player livePlayer = Helper.getPlayer(this);
-            Helper.printStreet(livePlayer.playerPath.peek());
 
         //ROUTE TO END
         if(livePlayer.playerPath.peek() == null)
@@ -76,7 +71,7 @@ public class ScenarioActivity extends AppCompatActivity
 
         //ROUTE TO END
         //ROUTE TO SPINNER
-        }else if (livePlayer.playerPath.peek().isSpinner == true)
+        }else if (livePlayer.playerPath.peek().isSpinner)
         {
             Intent intent = new Intent(this, SpinnerActivity.class);
             switch (v.getId())
@@ -91,6 +86,21 @@ public class ScenarioActivity extends AppCompatActivity
                     break;
             }
         //ROUTE TO SPINNER
+        }else if(livePlayer.playerPath.peek().isOption)
+        {
+            Intent intent = new Intent(this, OptionActivity.class);
+            switch (v.getId())
+            {
+                case R.id.option_go_1:
+                    Helper.pushStreet(this,Helper.getPlayer(this),Helper.getStreet(this).branch_left);
+                    startActivity(intent);
+                    break;
+                case R.id.option_go_2:
+                    Helper.pushStreet(this,Helper.getPlayer(this),Helper.getStreet(this).branch_right);
+                    startActivity(intent);
+                    break;
+            }
+            //ROUTE TO OPTION
         //CATCH ROUTE
         }else{
 

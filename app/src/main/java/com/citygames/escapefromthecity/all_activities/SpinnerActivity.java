@@ -1,17 +1,13 @@
 package com.citygames.escapefromthecity.all_activities;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 
 //LOCAL FOLDER FILE PATHING
 import com.citygames.escapefromthecity.R;
@@ -20,7 +16,6 @@ import com.citygames.escapefromthecity.item.Armory;
 import com.citygames.escapefromthecity.item.Item;
 //LOCAL FOLDER FILE PATHING
 import com.citygames.escapefromthecity.world.Street;
-import com.google.gson.Gson;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,13 +29,25 @@ public class SpinnerActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_spinner);
+            Player livePlayer = Helper.getPlayer(this);
+            Street toCheck = livePlayer.playerPath.peek();
 
         //SPINNER CONSTRUCTOR FOR ITEMS
             Armory.MakeItems();
             spin_item = findViewById(R.id.item_spinner);
             List<String> list = new ArrayList<String>();
-            for (Item item : Armory.allItems) {
-                list.add(item.title);
+            for (Item item : Armory.allItems)
+            {
+                if (toCheck.button_right != null)
+                {
+                    if (item.isDumpster == true){list.add(item.title);}
+                }
+                if (toCheck.button_right == null)
+                {
+                    if (item.isDumpster == false){list.add(item.title);}
+                }else{
+
+                }
             }
             ArrayAdapter<String> itemAdapter = new ArrayAdapter<String>(this,
                     android.R.layout.simple_spinner_item, list);
@@ -55,28 +62,26 @@ public class SpinnerActivity extends AppCompatActivity
 
 
     @Override
-    public void onClick(View v)
-    {
+    public void onClick(View v) {
         //GRAB PLAYER
         Player livePlayer = Helper.getPlayer(this);
-        Helper.popStreet(this,livePlayer);
+        Street next = Helper.popStreet(this, livePlayer);
+
 
         //ROUTE TO END
-        if(livePlayer.playerPath.isEmpty())
+        if (livePlayer.playerPath.isEmpty())
         {
             Intent intent = new Intent(this, EndActivity.class);
-            switch (v.getId())
-            {
+            switch (v.getId()) {
                 case R.id.submit_button:
                     startActivity(intent);
                     break;
             }
-        }
+
         //ROUTE TO END
         //SET PEAK TO VARIABLE FOR NAVIGATION
-        Street toCheck = livePlayer.playerPath.peek();
         //ROUTE TO OPTION
-        if(toCheck.isOption == true)
+        }else if(livePlayer.playerPath.peek().isOption == true)
         {
             Intent intent = new Intent(this, OptionActivity.class);
             switch (v.getId())

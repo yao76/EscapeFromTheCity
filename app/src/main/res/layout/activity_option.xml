@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/options_bottom"
     tools:context=".all_activities.MainActivity">
 
     <TextView
@@ -55,11 +56,11 @@
         android:layout_marginBottom="8dp"
         android:text="@string/action_option_1"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.445"
-        app:layout_constraintStart_toEndOf="@+id/vertical"
+        app:layout_constraintEnd_toStartOf="@+id/vertical"
+        app:layout_constraintHorizontal_bias="0.538"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/divider"
-        app:layout_constraintVertical_bias="0.513" />
+        app:layout_constraintVertical_bias="0.512" />
 
     <Button
         android:id="@+id/action_go_2"
@@ -73,11 +74,11 @@
         android:layout_marginBottom="8dp"
         android:text="@string/action_option_1"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/vertical"
-        app:layout_constraintHorizontal_bias="0.538"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.445"
+        app:layout_constraintStart_toEndOf="@+id/vertical"
         app:layout_constraintTop_toBottomOf="@+id/divider"
-        app:layout_constraintVertical_bias="0.512" />
+        app:layout_constraintVertical_bias="0.513" />
 
     <TextView
         android:id="@+id/viewOption"

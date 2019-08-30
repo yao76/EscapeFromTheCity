@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@mipmap/dope_background"
+    android:background="@drawable/walking_bottom"
     android:id="@+id/hidden_scenario"
     tools:context=".all_activities.MainActivity">
 
@@ -14,26 +14,13 @@
         android:layout_height="wrap_content"
         android:text="@string/viewFlavor"
         android:textAlignment="center"
-        android:textColor="#FFFFFF"
+        android:textColor="@android:color/black"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.001" />
-
-    <ImageView
-        android:id="@+id/Scenario_0_flavor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499"
-        app:srcCompat="@mipmap/ic_launcher_test_foreground" />
+        app:layout_constraintVertical_bias="0.268" />
 
     <View
         android:id="@+id/divider"
@@ -43,8 +30,7 @@
         android:background="?android:attr/listDivider"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Scenario_0_flavor" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <View
         android:id="@+id/vertical"

@@ -2,7 +2,6 @@ package com.citygames.escapefromthecity.all_activities;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -12,14 +11,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.citygames.escapefromthecity.R;
 import com.citygames.escapefromthecity.character.Player;
 import com.citygames.escapefromthecity.world.Street;
-import com.google.gson.Gson;
 
 public class ScenarioActivity extends AppCompatActivity
         implements View.OnClickListener
 {
-
-    Button Option_1,
-            Option_2;
+    Button Option_1,Option_2;
     TextView flavor;
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -30,6 +26,10 @@ public class ScenarioActivity extends AppCompatActivity
         Player livePlayer = Helper.getPlayer(this);
         //POPS STREET FROM STACK TO GIVE LAYOUT FOR RENDER
         Street toRender = Helper.popStreet(this,livePlayer);
+        //SETS STREET
+            Helper.setStreet(this,toRender);
+        //SETS STREET
+
         //PUT PLAYER BACK
         Helper.setPlayer(this,livePlayer);
 
@@ -53,11 +53,10 @@ public class ScenarioActivity extends AppCompatActivity
     public void onClick(View v)
     {
         //GET PLAYER
-        Player livePlayer = Helper.getPlayer(this);
-
+            Player livePlayer = Helper.getPlayer(this);
 
         //ROUTE TO END
-        if(livePlayer.playerPath.isEmpty())
+        if(livePlayer.playerPath.peek() == null)
         {
             Intent intent = new Intent(this, EndActivity.class);
             switch (v.getId())
@@ -69,24 +68,39 @@ public class ScenarioActivity extends AppCompatActivity
                     startActivity(intent);
                     break;
             }
-        }
-        //SET PEAK TO VARIABLE FOR NAVIGATION
-        Street toCheck = livePlayer.playerPath.peek();
+
         //ROUTE TO END
         //ROUTE TO SPINNER
-        if(toCheck.isSpinner == true)
+        }else if (livePlayer.playerPath.peek().isSpinner)
         {
             Intent intent = new Intent(this, SpinnerActivity.class);
             switch (v.getId())
             {
                 case R.id.option_go_1:
+                    Helper.pushStreet(this,Helper.getPlayer(this),Helper.getStreet(this).branch_left);
                     startActivity(intent);
                     break;
                 case R.id.option_go_2:
+                    Helper.pushStreet(this,Helper.getPlayer(this),Helper.getStreet(this).branch_right);
                     startActivity(intent);
                     break;
             }
         //ROUTE TO SPINNER
+        }else if(livePlayer.playerPath.peek().isOption)
+        {
+            Intent intent = new Intent(this, OptionActivity.class);
+            switch (v.getId())
+            {
+                case R.id.option_go_1:
+                    Helper.pushStreet(this,Helper.getPlayer(this),Helper.getStreet(this).branch_left);
+                    startActivity(intent);
+                    break;
+                case R.id.option_go_2:
+                    Helper.pushStreet(this,Helper.getPlayer(this),Helper.getStreet(this).branch_right);
+                    startActivity(intent);
+                    break;
+            }
+            //ROUTE TO OPTION
         //CATCH ROUTE
         }else{
 
@@ -94,9 +108,11 @@ public class ScenarioActivity extends AppCompatActivity
             switch (v.getId())
             {
                 case R.id.option_go_1:
+                    Helper.pushStreet(this,Helper.getPlayer(this),Helper.getStreet(this).branch_left);
                     startActivity(intent);
                     break;
                 case R.id.option_go_2:
+                    Helper.pushStreet(this,Helper.getPlayer(this),Helper.getStreet(this).branch_right);
                     startActivity(intent);
                     break;
             }

@@ -15,6 +15,10 @@ public class Street
     public String button_left;
     public String button_right;
     //STREET NAVIGATION PROPERTIES
+    //NEXT POSSIBLE STREET
+    public Street branch_left;
+    public Street branch_right;
+    //NEXT POSSIBLE STREET
 
     public Street(String ofStreet)
     {
@@ -24,5 +28,7 @@ public class Street
         button_right = "";
         isSpinner = false;
         isOption = false;
+        branch_left = null;
+        branch_right =null;
     }
 }

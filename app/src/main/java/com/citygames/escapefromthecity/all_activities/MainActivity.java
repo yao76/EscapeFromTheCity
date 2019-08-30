@@ -1,6 +1,9 @@
 package com.citygames.escapefromthecity.all_activities;
 
 import android.content.Intent;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
+import android.media.SoundPool;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -38,6 +41,11 @@ public class MainActivity extends AppCompatActivity
             Helper.setPlayer(this, livePlayer);
             Armory.MakeItems();
         //PLAYER
+
+        MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.r2b2beep);
+        mp.start();
+
+
         //BUTTON TO LEAVE PAGE
             Start = findViewById(R.id.ViewStart);
             Start.setOnClickListener(this);

@@ -47,7 +47,8 @@ public class MainActivity extends AppCompatActivity
 
         // WHAT THE FUCK WHY IS THIS NOT WORKING ANYMORE
 
-
+        MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.r2b2beep2);
+        mp.start();
 
 
 

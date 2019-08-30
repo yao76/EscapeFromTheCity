@@ -73,11 +73,19 @@ public class World
 
             Street counting_dojo = new Street("Counting Dojo");
                 counting_dojo.flavorText = CountingDojoFlavor;
-                counting_dojo.button_left = "Placeholder";
-                counting_dojo.button_right = "Sesame St";
-//                counting_dojo.isSpinner = true;
-                    allPlaces.add(counting_dojo);
+                counting_dojo.button_left = "End";
+                counting_dojo.button_right = "Fifth Ave";
+                allPlaces.add(counting_dojo);
 
+            Street oscars_dump = new Street("Oscar's Dump");
+                oscars_dump.flavorText = dump;
+
+
+            Street baker = new Street("123 Baker Street");
+                baker.flavorText = bakerFlavor;
+
+            Street waldo = new Street("????");
+                waldo.flavorText = waldoFlavor;
             //SPINNERS
 
         allPaths = new ArrayList<Stack<Street>>(){};
@@ -92,19 +100,47 @@ public class World
                 bag.branch_right = deadCenter_option;
 
                 deadCenter_option.branch_left = stigwood;
+                deadCenter_option.button_left = stigwood.name;
                 deadCenter_option.branch_right = sesame;
+                deadCenter_option.button_right = sesame.name;
 
                 stigwood.branch_right = fifthave;
+                stigwood.button_left = fifthave.name;
+                stigwood.branch_left = sesame;
+                stigwood.button_right = sesame.name;
 
+                fifthave.branch_left = waldo;
+                fifthave.button_left = waldo.name;
+                fifthave.branch_right = baker;
+                fifthave.button_right = baker.name;
+
+                waldo.branch_left = baker;
+                waldo.button_left = baker.name;
+                waldo.branch_right = null;
+                waldo.button_right = "End";
+
+                baker.button_left = oscars_dump.name;
+                baker.branch_left = oscars_dump;
+                baker.button_right = "End";
+                baker.branch_right = null;
+
+                sesame.button_right = counting_dojo.name;
                 sesame.branch_right = counting_dojo;
-                sesame.branch_left = fifthave;
+                sesame.button_left = oscars_dump.name;
+                sesame.branch_left = oscars_dump;
 
                 counting_dojo.branch_left = null;
-                counting_dojo.branch_right = null;
+                counting_dojo.button_left = "End";
+                counting_dojo.branch_right = fifthave;
+                counting_dojo.button_right = fifthave.name;
 
+                oscars_dump.branch_left = null;
+                oscars_dump.button_left = "End";
+                oscars_dump.branch_right = null;
+                oscars_dump.button_right = "End";
 
                 way_0.push(deadCenter);
-        allPaths.add(way_0);
+                allPaths.add(way_0);
     }
 
 
@@ -112,6 +148,20 @@ public class World
     //GIANT LIST OF FLAVOR STRINGS
     //GIANT LIST OF FLAVOR STRINGS
     String defaultFlavor = "real flavor text would go here";
+
+    String waldoFlavor =
+            "It's Waldo......... \n" +
+                    "he gave you a super sweet hat!!";
+
+    String dump =
+            "Oscar's dump truck was taken over by \n" +
+                    "SKYNET!!!! \n" +
+                    "Attacks you, you barely survived......";
+
+    String bakerFlavor =
+            "Sherlock Holmes told the police that \n" +
+                    "you are the a suspect for a recent \n" +
+                    "accounting scheme, went to jail....";
 
     String deadCenterFlavor =
             "        The Night was dark and full of terrors...........\n" +

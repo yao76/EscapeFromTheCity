@@ -144,15 +144,15 @@ public class World
                 fifthave.branch_right = fifthave_option_2;
                 fifthave.button_right = fifthave_option_2.name;
 
-                    fifthave_option_1.branch_left = waldo;
-                    fifthave_option_1.button_left = waldo.name;
-                    fifthave_option_1.branch_right = baker;
-                    fifthave_option_1.button_right = baker.name;
+                    fifthave_option_1.branch_left = null;
+                    fifthave_option_1.button_left = "Died on Impact";
+                    fifthave_option_1.branch_right = null;
+                    fifthave_option_1.button_right = "Died on Impact";
 
-                    fifthave_option_1.branch_left = sunny;
-                    fifthave_option_1.button_left = sunny.name;
-                    fifthave_option_1.branch_right = shady;
-                    fifthave_option_1.button_right = shady.name;
+                    fifthave_option_2.branch_left = sunny;
+                    fifthave_option_2.button_left = sunny.name;
+                    fifthave_option_2.branch_right = shady;
+                    fifthave_option_2.button_right = shady.name;
 
                 waldo.branch_left = baker;
                 waldo.button_left = baker.name;
@@ -212,7 +212,7 @@ public class World
     String fifthave_option_1Flavor =
             "You got hit by an angry grandma \n" +
                     "on a rascal \n" +
-                    "How embarrassing";
+                    "Died on Impact";
 
     String fifthave_option_2Flavor =
             "An angry grandma on a rascal \n" +

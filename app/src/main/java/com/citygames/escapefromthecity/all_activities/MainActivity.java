@@ -42,8 +42,9 @@ public class MainActivity extends AppCompatActivity
             Armory.MakeItems();
         //PLAYER
 
-        MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.r2b2beep);
-        mp.start();
+        // WHAT THE FUCK WHY IS THIS NOT WORKING ANYMORE
+        // MediaPlayer mp = MediaPlayer.create(getApplicationContext(), R.raw.r2b2beep);
+        // mp.start();
 
 
         //BUTTON TO LEAVE PAGE

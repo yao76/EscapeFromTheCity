@@ -54,18 +54,14 @@ public class OptionActivity extends AppCompatActivity
     {
         //GET PLAYER
         Player livePlayer = Helper.getPlayer(this);
-
+        Helper.printStreet(livePlayer.playerPath.peek());
         //ROUTE TO END
         if (livePlayer.playerPath.peek() == null)
         {
             Intent intent = new Intent(this, EndActivity.class);
             switch (v.getId()) {
-                case R.id.action_go_1:
-                    Helper.pushStreet(this,Helper.getPlayer(this),Helper.getStreet(this).branch_left);
-                    startActivity(intent);
-                    break;
-                case R.id.action_go_2:
-                    Helper.pushStreet(this,Helper.getPlayer(this),Helper.getStreet(this).branch_right);
+                case R.id.option_go_1:
+                case R.id.option_go_2:
                     startActivity(intent);
                     break;
             }

@@ -55,6 +55,7 @@ public class ScenarioActivity extends AppCompatActivity
     {
         //GET PLAYER
             Player livePlayer = Helper.getPlayer(this);
+            Helper.printStreet(livePlayer.playerPath.peek());
 
         //ROUTE TO END
         if(livePlayer.playerPath.peek() == null)
@@ -102,7 +103,6 @@ public class ScenarioActivity extends AppCompatActivity
                     break;
             }
         //ROUTE TO OPTION
-
         //CATCH ROUTE
         }else{
 

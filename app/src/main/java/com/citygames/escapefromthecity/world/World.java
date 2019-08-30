@@ -69,6 +69,7 @@ public class World
 
             Street counting_dojo = new Street("Counting Dojo");
                 counting_dojo.flavorText = CountingDojoFlavor;
+
                 Street counting_dojo_attend = new Street("Take Class");
                     counting_dojo_attend.flavorText = CountingDojoTakeFlavor;
                     counting_dojo_attend.isOption = true;
@@ -197,15 +198,15 @@ public class World
                 counting_dojo.branch_right = counting_dojo_skip;
                 counting_dojo.button_right = counting_dojo_skip.name;
 
-                counting_dojo_attend.branch_left = sunny;
-                counting_dojo_attend.button_left = sunny.name;
-                counting_dojo_attend.branch_right = null;
-                counting_dojo_attend.button_right = "End";
+                    counting_dojo_attend.branch_left = sunny;
+                    counting_dojo_attend.button_left = sunny.name;
+                    counting_dojo_attend.branch_right = sunny;
+                    counting_dojo_attend.button_right = sunny.name;
 
-                counting_dojo_skip.branch_left = fifthave;
-                counting_dojo_skip.button_left = fifthave.name;
-                counting_dojo_skip.branch_right = null;
-                counting_dojo_skip.button_right = "End";
+                    counting_dojo_skip.branch_left = sunny;
+                    counting_dojo_skip.button_left = fifthave.name;
+                    counting_dojo_skip.branch_right = sunny;
+                    counting_dojo_skip.button_right = sunny.name;
 
                 oscars_dump.branch_left = sunny;
                 oscars_dump.button_left = sunny.name;
